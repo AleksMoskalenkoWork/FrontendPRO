@@ -1,0 +1,39 @@
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+button {
+  width: fit-content;
+  height: 48px;
+  margin: 25px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: bisque;
+}
+
+.active {
+  color: burlywood;
+}
+
+.container {
+  display: flex;
+}
+
+#right {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
