@@ -1,0 +1,48 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+
+input {
+  margin: 0;
+  padding: 4px 6px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline-style: none;
+}
+
+#addTask {
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: lightgreen;
+}
+
+#removeTask {
+  height: 24px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: lightcoral;
+  margin-left: 12px;
+}
+
+#orderList {
+  padding-left: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 100vh;
+  margin: 0 auto;
+}
