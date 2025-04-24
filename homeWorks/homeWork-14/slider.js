@@ -64,24 +64,20 @@ function Slider(collection) {
 
     dotsContainer ? dotsContainer.remove() : '';
 
-    if (this.collectionImage.length <= 3) {
-      currentDots.push(new Array(this.collectionImage.length).keys());
+    if (this.currentImageIndex === 0) {
+      currentDots = [0, 1, 2];
+    } else if (this.currentImageIndex === this.collectionImage.length - 1) {
+      currentDots = [
+        this.collectionImage.length - 3,
+        this.collectionImage.length - 2,
+        this.collectionImage.length - 1,
+      ];
     } else {
-      if (this.currentImageIndex === 0) {
-        currentDots = [0, 1, 2];
-      } else if (this.currentImageIndex === this.collectionImage.length - 1) {
-        currentDots = [
-          this.collectionImage.length - 3,
-          this.collectionImage.length - 2,
-          this.collectionImage.length - 1,
-        ];
-      } else {
-        currentDots = [
-          this.currentImageIndex - 1,
-          this.currentImageIndex,
-          this.currentImageIndex + 1,
-        ];
-      }
+      currentDots = [
+        this.currentImageIndex - 1,
+        this.currentImageIndex,
+        this.currentImageIndex + 1,
+      ];
     }
 
     currentDots.forEach((index) => {
