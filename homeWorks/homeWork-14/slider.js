@@ -81,17 +81,21 @@ function Slider(collection) {
     }
 
     currentDots.forEach((index) => {
-      const dot = document.createElement('span');
-      dot.classList.add('dot');
+      if (this.collectionImage.length <= 3) {
+        dotsContainer.style.display = 'none';
+      } else {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
 
-      index === this.currentImageIndex ? dot.classList.add('dot_active') : '';
+        index === this.currentImageIndex ? dot.classList.add('dot_active') : '';
 
-      dot.addEventListener('click', () => {
-        this.currentImageIndex = index;
-        this.updateState();
-      });
+        dot.addEventListener('click', () => {
+          this.currentImageIndex = index;
+          this.updateState();
+        });
 
-      dotsContainer.appendChild(dot);
+        dotsContainer.appendChild(dot);
+      }
     });
 
     sliderContainer.appendChild(dotsContainer);
