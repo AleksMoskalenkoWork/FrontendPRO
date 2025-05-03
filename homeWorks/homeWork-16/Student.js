@@ -27,62 +27,62 @@ function Student(student) {
   this.yearOfBirthday = student.yearOfBirthday;
   this.marks = student.marks;
   this.attendance = new Array(25);
-
-  this.getStudentAge = () => {
-    alert(`yearOfBirthday: ${this.yearOfBirthday}`);
-  };
-
-  this.getStudentAverageMark = () => {
-    const total = this.marks.reduce(
-      (accumulator, currentValue) => accumulator + currentValue
-    );
-    const averageMark = total / this.marks.length;
-
-    return averageMark;
-  };
-
-  this.getStudentAverageAttendance = () => {
-    const totalAttendance = this.attendance.length;
-    const totalPresentAttendance = this.attendance.filter(
-      (x) => x === true
-    ).length;
-    const averageAttendance = totalPresentAttendance / totalAttendance;
-    const roundedValue = Math.round(averageAttendance * 10) / 10;
-
-    return roundedValue;
-  };
-
-  this.present = () => {
-    const emptySlotIndex = this.attendance.findIndex((x) => x === undefined);
-    if (emptySlotIndex !== -1) {
-      this.attendance[emptySlotIndex] = true;
-    } else {
-      alert('Empty slots end');
-    }
-  };
-
-  this.absent = () => {
-    const emptySlotIndex = this.attendance.findIndex((x) => x === undefined);
-    if (emptySlotIndex !== -1) {
-      this.attendance[emptySlotIndex] = false;
-    } else {
-      alert('Empty slots end');
-    }
-  };
-
-  this.summary = () => {
-    const averageMark = this.getStudentAverageMark();
-    const averageAttendance = this.getStudentAverageAttendance();
-
-    if (averageMark >= 90 && averageAttendance >= 0.9) {
-      alert('Молодець!');
-    } else if (averageMark < 90 && averageAttendance < 0.9) {
-      alert('Редиска!');
-    } else {
-      alert('Добре, але можна краще');
-    }
-  };
 }
+
+Student.prototype.getStudentAge = function () {
+  alert(`yearOfBirthday: ${this.yearOfBirthday}`);
+};
+
+Student.prototype.getStudentAverageMark = function () {
+  const total = this.marks.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
+  const averageMark = total / this.marks.length;
+
+  return averageMark;
+};
+
+Student.prototype.getStudentAverageAttendance = function () {
+  const totalAttendance = this.attendance.length;
+  const totalPresentAttendance = this.attendance.filter(
+    (x) => x === true
+  ).length;
+  const averageAttendance = totalPresentAttendance / totalAttendance;
+  const roundedValue = Math.round(averageAttendance * 10) / 10;
+
+  return roundedValue;
+};
+
+Student.prototype.present = function () {
+  const emptySlotIndex = this.attendance.findIndex((x) => x === undefined);
+  if (emptySlotIndex !== -1) {
+    this.attendance[emptySlotIndex] = true;
+  } else {
+    alert('Empty slots end');
+  }
+};
+
+Student.prototype.absent = function () {
+  const emptySlotIndex = this.attendance.findIndex((x) => x === undefined);
+  if (emptySlotIndex !== -1) {
+    this.attendance[emptySlotIndex] = false;
+  } else {
+    alert('Empty slots end');
+  }
+};
+
+Student.prototype.summary = function () {
+  const averageMark = this.getStudentAverageMark();
+  const averageAttendance = this.getStudentAverageAttendance();
+
+  if (averageMark >= 90 && averageAttendance >= 0.9) {
+    alert('Молодець!');
+  } else if (averageMark < 90 && averageAttendance < 0.9) {
+    alert('Редиска!');
+  } else {
+    alert('Добре, але можна краще');
+  }
+};
 
 const excellentStudent = new Student(persons.excellentStudent);
 const goodStudent = new Student(persons.goodStudent);
