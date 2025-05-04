@@ -30,7 +30,7 @@ function Student(student) {
 }
 
 Student.prototype.getStudentAge = function () {
-  alert(`yearOfBirthday: ${this.yearOfBirthday}`);
+  return this.yearOfBirthday;
 };
 
 Student.prototype.getStudentAverageMark = function () {
