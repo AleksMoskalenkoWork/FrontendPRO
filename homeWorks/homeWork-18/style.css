@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100px;
+  height: 48px;
+  border: 1px solid black;
+  border-radius: 12px;
+  background: transparent;
+}
+
+.setIntervalButton:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+.askIntervalWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.counterWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.counterContentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.hideElement {
+  display: none;
+}
