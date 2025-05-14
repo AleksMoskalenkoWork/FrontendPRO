@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#emptyState {
+  text-align: center;
+}
+#weatherStateWrapper {
+  font-size: 80px;
+}
+
+#leftContentContainer,
+#rightContentContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  width: 120px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 6px;
+  text-transform: uppercase;
+}
+
+input {
+  width: 100%;
+  height: 24px;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  outline: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.widgetWrapper {
+  border: 1px solid black;
+  border-radius: 16px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightskyblue;
+  padding: 24px;
+}
+
+.controlWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: fit-content;
+  margin-bottom: 12px;
+}
+
+.errorField {
+  border: 1px solid red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+.location {
+  font-size: 24px;
+}
+
+.temp {
+  font-size: 48px;
+}
+
+.weatherDescription {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.parameterWrapper span {
+  text-transform: capitalize;
+}
+
+.directionWrapper,
+.weatherDescriptionWrapper,
+.parameterWrapper {
+  display: flex;
+  flex-direction: column;
+}
