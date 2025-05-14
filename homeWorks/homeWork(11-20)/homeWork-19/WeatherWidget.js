@@ -86,7 +86,7 @@ class WeatherWidget {
     wrapper.innerHTML = `
         <div id="leftContentContainer">
             <div class='directionWrapper'>
-                <span class='location'></i>${
+                <span class='location'>${
                   this.json.name + ',' + this.json.sys.country
                 }</span>
                 <span>${this.date.toLocaleDateString()}</span>
@@ -102,6 +102,7 @@ class WeatherWidget {
         </div>
         <div id="rightContentContainer">
         <div class='parameterWrapper'>
+            <i class="bi bi-arrow-repeat" id='updateWeather' onclick="weatherWidget.updateData()"></i>
             <span>${
               'feels like:' + ' ' + Math.floor(this.json.main.feels_like)
             }</span>
@@ -130,6 +131,18 @@ class WeatherWidget {
     } else {
       this.response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.apiKey}`
+      );
+      this.json = await this.response.json();
+
+      this.renderData();
+      this.weatherState();
+    }
+  }
+
+  async updateData() {
+    if (this.json !== null) {
+      this.response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${this.json.name}&units=metric&appid=${this.apiKey}`
       );
       this.json = await this.response.json();
 

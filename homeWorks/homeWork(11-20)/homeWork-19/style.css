@@ -4,6 +4,10 @@ body {
   box-sizing: border-box;
 }
 
+#updateWeather {
+  text-align: end;
+}
+
 #emptyState {
   text-align: center;
 }
