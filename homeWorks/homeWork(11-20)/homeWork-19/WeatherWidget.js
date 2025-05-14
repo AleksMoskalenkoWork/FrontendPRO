@@ -93,7 +93,7 @@ class WeatherWidget {
             </div>
             <div class='weatherDescriptionWrapper'>
                 <span class='temp'><i class="bi bi-thermometer-half"></i>${
-                  Math.floor(this.json.main.temp) + ' ' + 'C'
+                  Math.floor(this.json.main.temp) + ' ' + '°C'
                 }</span>
                 <span class='weatherDescription'>${
                   this.json.weather[0].description
@@ -104,19 +104,19 @@ class WeatherWidget {
         <div class='parameterWrapper'>
             <i class="bi bi-arrow-repeat" id='updateWeather' onclick="weatherWidget.updateData()"></i>
             <span>${
-              'feels like:' + ' ' + Math.floor(this.json.main.feels_like)
+              'feels like:' + ' ' + Math.floor(this.json.main.feels_like) + '°C'
             }</span>
             <span>${
-              'humidity:' + ' ' + Math.floor(this.json.main.humidity)
+              'humidity:' + ' ' + Math.floor(this.json.main.humidity) + '%'
             }</span>
             <span>${
-              'pressure:' + ' ' + Math.floor(this.json.main.pressure)
+              'pressure:' + ' ' + Math.floor(this.json.main.pressure) + 'hPa'
             }</span>
             <span>${
-              'max:' + ' ' + Math.floor(this.json.main.temp_max) + 'C'
+              'max:' + ' ' + Math.floor(this.json.main.temp_max) + '°C'
             }</span>
             <span>${
-              'min:' + ' ' + Math.floor(this.json.main.temp_min) + 'C'
+              'min:' + ' ' + Math.floor(this.json.main.temp_min) + '°C'
             }</span>
         </div>
         <div id='weatherStateWrapper'></div>
