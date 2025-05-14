@@ -4,7 +4,7 @@ class WeatherWidget {
     this.response;
     this.json;
     this.date = new Date();
-    this.apiKey = '6b5612588751a596d85ff5adbf583e3f';
+    this.apiKey = '';
     this.input = document.querySelector('#cityName');
     this.button = document.querySelector('#submit');
   }
