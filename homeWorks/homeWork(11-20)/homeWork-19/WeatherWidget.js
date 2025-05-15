@@ -67,10 +67,9 @@ class WeatherWidget {
     const rightContentContainer = document.querySelector(
       '#rightContentContainer'
     );
-    const widgetWrapper = document.querySelector('.widgetWrapper');
     const error = document.createElement('span');
     error.innerText = this.response.statusText;
-    widgetWrapper.appendChild(error);
+    this.widgetWrapper.appendChild(error);
 
     if (emptyState) {
       emptyState.remove();
@@ -156,8 +155,9 @@ class WeatherWidget {
       this.handelFetchError();
     } else {
       this.input.value = '';
-      if (this.emptyState) {
-        this.emptyState.remove();
+      const emptyState = document.querySelector('#emptyState');
+      if (emptyState) {
+        emptyState.remove();
       }
       this.widgetTemplate(this.widgetWrapper);
       this.weatherState();
