@@ -43,7 +43,7 @@ class WeatherWidget {
     }
   }
 
-  async weatherState() {
+  weatherState() {
     const weatherStateWrapper = document.querySelector('#weatherStateWrapper');
 
     if (this.json.weather[0].main === 'Clear') {
