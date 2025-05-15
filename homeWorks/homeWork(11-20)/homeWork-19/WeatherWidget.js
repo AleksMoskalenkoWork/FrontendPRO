@@ -7,6 +7,8 @@ class WeatherWidget {
     this.apiKey = '';
     this.input = document.querySelector('#cityName');
     this.button = document.querySelector('#submit');
+    this.widgetWrapper = document.querySelector('.widgetWrapper');
+    this.state = document.createElement('i');
   }
 
   enterKeyEvent(event) {
@@ -41,20 +43,18 @@ class WeatherWidget {
     }
   }
 
-  weatherState() {
+  async weatherState() {
     const weatherStateWrapper = document.querySelector('#weatherStateWrapper');
-    const clear = document.createElement('i');
-    const clouds = document.createElement('i');
 
     if (this.json.weather[0].main === 'Clear') {
-      clear.classList.add('bi', 'bi-sun');
-      weatherStateWrapper.appendChild(clear);
+      this.state.classList.add('bi', 'bi-sun');
+      weatherStateWrapper.appendChild(this.state);
     } else if (this.json.weather[0].main === 'Clouds') {
-      clouds.classList.add('bi', 'bi-cloud');
-      weatherStateWrapper.appendChild(clouds);
+      this.state.classList.add('bi', 'bi-cloud');
+      weatherStateWrapper.appendChild(this.state);
     } else if (this.json.weather[0].main === 'Rain') {
-      clouds.classList.add('bi', 'bi-cloud-rain');
-      weatherStateWrapper.appendChild(clouds);
+      this.state.classList.add('bi', 'bi-cloud-rain');
+      weatherStateWrapper.appendChild(this.state);
     }
   }
 
@@ -133,9 +133,7 @@ class WeatherWidget {
         `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.apiKey}`
       );
       this.json = await this.response.json();
-
       this.renderData();
-      this.weatherState();
     }
   }
 
@@ -145,9 +143,7 @@ class WeatherWidget {
         `https://api.openweathermap.org/data/2.5/weather?q=${this.json.name}&units=metric&appid=${this.apiKey}`
       );
       this.json = await this.response.json();
-
       this.renderData();
-      this.weatherState();
     }
   }
 
@@ -160,12 +156,11 @@ class WeatherWidget {
       this.handelFetchError();
     } else {
       this.input.value = '';
-      const widgetWrapper = document.querySelector('.widgetWrapper');
-      const emptyState = document.querySelector('#emptyState');
-      if (emptyState) {
-        emptyState.remove();
+      if (this.emptyState) {
+        this.emptyState.remove();
       }
-      this.widgetTemplate(widgetWrapper);
+      this.widgetTemplate(this.widgetWrapper);
+      this.weatherState();
     }
   }
 }

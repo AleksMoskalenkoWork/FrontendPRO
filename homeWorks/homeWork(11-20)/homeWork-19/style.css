@@ -6,6 +6,7 @@ body {
 
 #updateWeather {
   text-align: end;
+  cursor: pointer;
 }
 
 #emptyState {
