@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "sass scss/main.scss dist/css/main.css"
+    "build-css": "sass scss/main.scss dist/css/main.css",
+    "build-js": "babel homeWorks/homeWork(11-20)/homeWork-20 --out-dir dist/js/homeWork-20"
   },
   "author": "aleks moskalenko",
   "license": "ISC",
@@ -12,5 +13,10 @@
     "bootstrap": "^5.3.2",
     "jquery": "^3.7.1",
     "sass": "1.61.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2"
   }
 }
