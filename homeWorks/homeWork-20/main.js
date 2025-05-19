@@ -5,8 +5,7 @@ function addTask() {
   const isMarked = false;
   const taskName = $('input.js--form__input').val();
 
-  if (!taskName) {
-  } else {
+  if (taskName) {
     tasks.push({ id, taskName, isMarked });
     localStorage.setItem('tasks', JSON.stringify(tasks));
     showTaskList();
