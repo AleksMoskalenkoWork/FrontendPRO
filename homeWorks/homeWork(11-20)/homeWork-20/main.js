@@ -1,3 +1,7 @@
+import * as bootstrap from 'bootstrap';
+import './styles.scss';
+import $ from 'jquery';
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 function addTask() {
@@ -67,6 +71,7 @@ function createInfoModal(taskName, id) {
 }
 
 function showTaskList() {
+  $('.form__btn').on('click', addTask);
   const listEl = $('.js--todos-wrapper');
 
   if (!tasks.length) {
@@ -85,18 +90,26 @@ function showTaskList() {
         if (target.is('input[type="checkbox"]') || target.is('button')) {
           return;
         }
-
         createInfoModal(task.taskName, task.id);
       });
+
       liEl.html(`
-          <input type="checkbox" data-id="${task.id}" onclick="markTask(${
-        task.id
-      })" ${task.isMarked ? 'checked' : ''}  />
+          <input type="checkbox" class="todo-item__checkbox" ${
+            task.isMarked ? 'checked' : ''
+          } data-id="${task.id}" />
           <span class="todo-item__description">${task.taskName}</span>
-          <button class="todo-item__delete" onclick="deleteTask(${task.id})">
+          <button class="todo-item__delete">
               Видалити
           </button>
       `);
+
+      liEl.find('.todo-item__delete').on('click', () => {
+        deleteTask(task.id);
+      });
+
+      liEl.find('.todo-item__checkbox').on('click', () => {
+        markTask(task.id);
+      });
 
       if (task.isMarked) {
         liEl.addClass('todo-item--checked');
