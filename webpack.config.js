@@ -12,7 +12,6 @@ module.exports = {
     filename: 'main.bundle.js',
     clean: true,
   },
-  mode: 'development',
   devServer: {
     static: {
       directory: path.join(__dirname, 'build'),
