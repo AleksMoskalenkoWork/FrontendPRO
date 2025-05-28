@@ -68,7 +68,9 @@ export default class Todo {
     await this.showTaskList();
   }
 
-  createInfoModal(taskName, id) {
+  async createInfoModal(id) {
+    this.response = await this.api.getById(id);
+
     $('#taskInfoModal').remove();
     const modalEl = $('<div></div>');
 
@@ -77,11 +79,11 @@ export default class Todo {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Task №${id}</h5>
+              <h5 class="modal-title">Task №${this.response.id}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-              <p>This task description ${taskName}</p>
+              <p>This task description ${this.response.taskName}</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -111,13 +113,13 @@ export default class Todo {
         const liEl = $('<li></li>');
         liEl.addClass('todo-item');
         liEl.attr('data-id', `${task.id}`);
-        liEl.on('click', (event) => {
+        liEl.on('click', async (event) => {
           const target = $(event.target);
 
           if (target.is('input[type="checkbox"]') || target.is('button')) {
             return;
           }
-          this.createInfoModal(task.taskName, task.id);
+          await this.createInfoModal(task.id);
         });
 
         liEl.html(`

@@ -19,6 +19,13 @@ export default class TodoApi {
     });
   }
 
+  async getById(id) {
+    this.response = await fetch(`http://localhost:3000/todo/${id}`);
+    this.json = await this.response.json();
+
+    return this.json;
+  }
+
   async put(req) {
     await fetch(`http://localhost:3000/update/todo/${req.id}`, {
       method: 'PUT',

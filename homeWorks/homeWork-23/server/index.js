@@ -17,6 +17,16 @@ app.post('/create/todo', (req, res) => {
   res.send(newTodo);
 });
 
+app.get('/todo/:id', (req, res) => {
+  const task = dataArray.find((task) => task.id === +req.params.id);
+
+  if (task) {
+    res.send(task);
+  } else {
+    res.status(404);
+  }
+});
+
 app.put('/update/todo/:id', (req, res) => {
   const index = dataArray.findIndex((task) => task.id === req.body.id);
   if (index !== -1) {
