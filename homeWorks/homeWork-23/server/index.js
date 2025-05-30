@@ -22,8 +22,9 @@ app.post('/create/todo', (req, res) => {
   });
 });
 
-app.get('/todo/:id', (req, res) => {
-  const task = dataArray.find((task) => task.id === +req.params.id);
+app.get('/todo/:id', async (req, res) => {
+  const { id } = req.params;
+  const task = await TodoModel.findById(id);
 
   if (task) {
     res.send(task);
@@ -32,23 +33,23 @@ app.get('/todo/:id', (req, res) => {
   }
 });
 
-app.put('/update/todo/:id', (req, res) => {
-  const index = dataArray.findIndex((task) => task.id === req.body.id);
-  if (index !== -1) {
-    dataArray[index] = req.body;
-    res.send(dataArray);
+app.put('/update/todo/:id', async (req, res) => {
+  const updated = await TodoModel.findByIdAndUpdate(req.params.id, req.body);
+
+  if (updated) {
+    res.send(updated);
   } else {
-    res.status(404);
+    res.status(404).send('Задачу не знайдено');
   }
 });
 
-app.delete('/delete/todo/:id', (req, res) => {
-  const index = dataArray.findIndex((task) => task.id === req.body.id);
-  if (index !== -1) {
-    dataArray.splice(index, 1);
-    res.send(dataArray);
+app.delete('/delete/todo/:id', async (req, res) => {
+  const { id } = req.params;
+  const deleted = await TodoModel.findByIdAndDelete(id);
+  if (deleted) {
+    res.send(deleted);
   } else {
-    res.status(404);
+    res.status(404).send('Задачу не знайдено');
   }
 });
 

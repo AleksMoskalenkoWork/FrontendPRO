@@ -14,19 +14,17 @@ export default class Todo {
   }
 
   async addTask() {
-    //problem with id
+    //problem with custom id
 
     // this.response = await this.api.get();
     // this.id = this.response.length
-    //   ? +this.response[this.response.length - 1].id + 1
+    //   ? Number(this.response[this.response.length - 1].id) + 1
     //   : 1;
     this.isMarked = false;
     this.taskName = $('input.js--form__input').val();
-    console.log(this.id);
 
     if (this.taskName) {
       this.requestBody = {
-        // id: this.id,
         taskName: this.taskName,
         isMarked: this.isMarked,
       };
@@ -51,7 +49,7 @@ export default class Todo {
     const liEl = $(`li[data-id="${id}"]`);
     const checkboxEl = $(`input[type="checkbox"][data-id="${id}"]`);
 
-    const task = this.response.find((task) => task.id === id);
+    const task = this.response.find((task) => task._id === id);
 
     task.isMarked = checkboxEl.is(':checked');
 
@@ -62,12 +60,10 @@ export default class Todo {
     }
 
     this.requestBody = {
-      id: id,
       taskName: task.taskName,
       isMarked: task.isMarked,
     };
-
-    await this.api.put(this.requestBody);
+    await this.api.put(id, this.requestBody);
     await this.showTaskList();
   }
 
@@ -82,7 +78,7 @@ export default class Todo {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Task №${this.response.id}</h5>
+              <h5 class="modal-title">Task №${this.response._id}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
@@ -115,20 +111,21 @@ export default class Todo {
       this.response.forEach((task) => {
         const liEl = $('<li></li>');
         liEl.addClass('todo-item');
-        liEl.attr('data-id', `${task.id}`);
+        liEl.attr('data-id', `${task._id}`);
         liEl.on('click', async (event) => {
           const target = $(event.target);
 
           if (target.is('input[type="checkbox"]') || target.is('button')) {
             return;
           }
-          await this.createInfoModal(task.id);
+
+          await this.createInfoModal(task._id);
         });
 
         liEl.html(`
             <input type="checkbox" class="todo-item__checkbox" ${
               task.isMarked ? 'checked' : ''
-            } data-id="${task.id}" />
+            } data-id="${task._id}" />
             <span class="todo-item__description">${task.taskName}</span>
             <button class="todo-item__delete">
                 Видалити
@@ -136,11 +133,11 @@ export default class Todo {
         `);
 
         liEl.find('.todo-item__delete').on('click', () => {
-          this.deleteTask(task.id);
+          this.deleteTask(task._id);
         });
 
         liEl.find('.todo-item__checkbox').on('click', () => {
-          this.markTask(task.id);
+          this.markTask(task._id);
         });
 
         if (task.isMarked) {
