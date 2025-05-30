@@ -14,16 +14,19 @@ export default class Todo {
   }
 
   async addTask() {
-    this.response = await this.api.get();
-    this.id = this.response.length
-      ? +this.response[this.response.length - 1].id + 1
-      : 1;
+    //problem with id
+
+    // this.response = await this.api.get();
+    // this.id = this.response.length
+    //   ? +this.response[this.response.length - 1].id + 1
+    //   : 1;
     this.isMarked = false;
     this.taskName = $('input.js--form__input').val();
+    console.log(this.id);
 
     if (this.taskName) {
       this.requestBody = {
-        id: this.id,
+        // id: this.id,
         taskName: this.taskName,
         isMarked: this.isMarked,
       };

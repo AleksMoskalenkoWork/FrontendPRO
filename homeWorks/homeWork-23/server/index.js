@@ -1,20 +1,25 @@
 const express = require('express');
 const cors = require('cors');
-let dataArray = require('./src/dataArray');
+const db = require('./src/DBConnection');
+const TodoModel = require('./src/TodoSchema');
 const app = express();
 const port = 3000;
+
+db();
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/list', (req, res) => {
-  res.send(dataArray);
+app.get('/list', async (req, res) => {
+  const list = await TodoModel.find();
+  res.send(list);
 });
 
 app.post('/create/todo', (req, res) => {
-  const newTodo = { ...req.body };
-  dataArray.push(newTodo);
-  res.send(newTodo);
+  const newTodo = new TodoModel(req.body);
+  newTodo.save().then((todo) => {
+    res.status(201).send(todo);
+  });
 });
 
 app.get('/todo/:id', (req, res) => {
