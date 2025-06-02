@@ -1,0 +1,27 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #272b30;
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #c8c8c8;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+button,
+input,
+textarea,
+header,
+p,
+a,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
