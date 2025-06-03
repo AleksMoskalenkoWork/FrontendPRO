@@ -8,11 +8,11 @@ export default class Voting extends React.Component {
     this.voting = JSON.parse(localStorage.getItem('voting'));
 
     this.state = this.voting || {
-      angryVote: 0,
-      smileVote: 0,
-      upsideVote: 0,
-      sunglassesVote: 0,
-      laughingVote: 0,
+      angry: 0,
+      smile: 0,
+      upside: 0,
+      sunglasses: 0,
+      laughing: 0,
     };
   }
 
@@ -24,9 +24,9 @@ export default class Voting extends React.Component {
 
   vote(emojiKey) {
     this.setState((prevState) => {
-      const newVote = (prevState[`${emojiKey}Vote`] || 0) + 1;
+      const newVote = (prevState[emojiKey] || 0) + 1;
       return {
-        [`${emojiKey}Vote`]: newVote,
+        [emojiKey]: newVote,
       };
     });
   }
