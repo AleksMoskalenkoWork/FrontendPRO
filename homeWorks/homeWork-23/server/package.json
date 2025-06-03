@@ -2,10 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "run:prod": "node index.js",
-    "run:dev-server": "node --watch index.js"
-  },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

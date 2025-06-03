@@ -6,3 +6,13 @@
 4. For compiler production run script "dev-build" or run command in terminal 'npm run dev-build' and npm i
 5. For dev-server run script "dev-server" or run command in terminal 'npm run dev-server' and npm i
 6. For watch run script "watch" or run command in terminal 'npm run watch' and npm i
+
+
+ "scripts": {
+    // "prod-build": "webpack --config webpack.config.js",
+    // "dev-build": "webpack --config webpack.config.js --mode=development",
+    // "dev-server": "webpack serve",
+    // "watch": "webpack --watch --mode=development",
+    // "build-css": "sass scss/main.scss dist/css/main.css",
+    // "build-js": "babel homeWorks/homeWork(11-20)/homeWork-20 --out-dir dist/js/homeWork-20"
+  },
