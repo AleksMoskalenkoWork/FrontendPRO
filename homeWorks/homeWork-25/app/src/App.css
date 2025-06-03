@@ -1,0 +1,59 @@
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: fit-content;
+  height: inherit;
+}
+
+.modal-container {
+  text-align: center;
+  width: 550px;
+  padding: 12px;
+}
+
+.emoji-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.emoji-result {
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.emoji-result-block {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon {
+  font-size: 32px;
+  cursor: pointer;
+}
+.icon span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+.show-result-btn {
+  padding: 8px 12px;
+  background-color: #7a8288;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.reset-result-btn {
+  margin-left: 12px;
+  padding: 8px 12px;
+  background-color: #7a8288;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #fff;
+}
