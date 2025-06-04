@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from './Modal';
+import EmojiResultBlock from './emoji/EmojiResultBlock';
 
 export default class Voting extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class Voting extends React.Component {
       upside: 0,
       sunglasses: 0,
       laughing: 0,
+      isVisible: false,
     };
   }
 
@@ -21,6 +23,12 @@ export default class Voting extends React.Component {
       localStorage.setItem('voting', JSON.stringify(this.state));
     }
   }
+
+  toggleBlock = () => {
+    this.setState((prevState) => ({
+      isVisible: !prevState.isVisible,
+    }));
+  };
 
   vote(emojiKey) {
     this.setState((prevState) => {
@@ -31,7 +39,7 @@ export default class Voting extends React.Component {
     });
   }
 
-  showResult() {
+  result() {
     console.log('i am show result');
 
     // const maxValue = Math.max(...Object.values(this.state));
@@ -53,14 +61,18 @@ export default class Voting extends React.Component {
 
   render() {
     console.log('QA', this.state);
+    const { isVisible } = this.state;
 
     return (
-      <Modal
-        onClickEmoji={this.vote.bind(this)}
-        onClickShowResult={this.showResult.bind(this)}
-        onClickResetState={this.resetState}
-        state={this.state}
-      ></Modal>
+      <>
+        <Modal
+          onClickEmoji={this.vote.bind(this)}
+          onClickShowResult={this.toggleBlock.bind(this)}
+          onClickResetState={this.resetState}
+          state={this.state}
+        ></Modal>
+        {isVisible && <EmojiResultBlock></EmojiResultBlock>}
+      </>
     );
   }
 }

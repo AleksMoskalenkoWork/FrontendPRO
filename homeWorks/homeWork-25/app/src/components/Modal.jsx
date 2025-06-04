@@ -21,7 +21,6 @@ export default function Modal(props) {
           className="reset-result-btn"
           onClick={props.onClickResetState}
         ></Button>
-        <EmojiResultBlock></EmojiResultBlock>
       </div>
     </>
   );
