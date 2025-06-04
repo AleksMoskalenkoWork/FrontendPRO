@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from './Modal';
-import EmojiResultBlock from './emoji/EmojiResultBlock';
 
 export default class Voting extends React.Component {
   constructor(props) {
@@ -42,6 +41,7 @@ export default class Voting extends React.Component {
   }
 
   result() {
+    // win first find in list
     const [winnerKey, winnerValue] = Object.entries(this.state).reduce(
       (previousValue, currentValue) =>
         currentValue[1] > previousValue[1] ? currentValue : previousValue
@@ -53,7 +53,6 @@ export default class Voting extends React.Component {
         isVisible: !prevState.isVisible,
         result: { key: winnerKey, votes: winnerValue, className: className },
       }));
-      location.reload();
     } else if (winnerKey === 'smile') {
       const className = 'bi bi-emoji-smile-fill icon-winner';
       this.setState((prevState) => ({
@@ -82,8 +81,6 @@ export default class Voting extends React.Component {
   }
 
   render() {
-    console.log('QA', this.state);
-
     return (
       <Modal
         onClickEmoji={this.vote.bind(this)}

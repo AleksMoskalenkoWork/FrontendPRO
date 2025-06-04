@@ -13,14 +13,14 @@ export default function Modal(props) {
         ></EmojiContainer>
         {!props.state.isVisible && (
           <Button
-            value="Показати Результат"
+            value="Показати результат"
             className="show-result-btn"
             onClick={props.onClickShowResult}
           ></Button>
         )}
         {props.state.isVisible && (
           <Button
-            value="Оновити Результат"
+            value="Очистити результати"
             className="reset-result-btn"
             onClick={props.onClickResetState}
           ></Button>
