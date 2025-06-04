@@ -1,15 +1,14 @@
 .content-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  width: fit-content;
   height: inherit;
 }
 
 .modal-container {
   text-align: center;
   width: 550px;
+  height: 400px;
   padding: 12px;
 }
 
@@ -26,6 +25,7 @@
 }
 
 .emoji-result-block {
+  padding: 32px;
   margin: 0 auto;
   text-align: center;
 }
@@ -34,6 +34,16 @@
   font-size: 32px;
   cursor: pointer;
 }
+
+.icon:hover {
+  color: lightcoral;
+}
+
+.icon-winner {
+  font-size: 48px;
+  color: lightgreen;
+}
+
 .icon span {
   display: inline-block;
   width: 16px;
@@ -50,7 +60,6 @@
 }
 
 .reset-result-btn {
-  margin-left: 12px;
   padding: 8px 12px;
   background-color: #7a8288;
   border: 1px solid transparent;

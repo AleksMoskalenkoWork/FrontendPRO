@@ -11,16 +11,23 @@ export default function Modal(props) {
           onClick={props.onClickEmoji}
           state={props.state}
         ></EmojiContainer>
-        <Button
-          value="Показати Результат"
-          className="show-result-btn"
-          onClick={props.onClickShowResult}
-        ></Button>
-        <Button
-          value="Оновити Результат"
-          className="reset-result-btn"
-          onClick={props.onClickResetState}
-        ></Button>
+        {!props.state.isVisible && (
+          <Button
+            value="Показати Результат"
+            className="show-result-btn"
+            onClick={props.onClickShowResult}
+          ></Button>
+        )}
+        {props.state.isVisible && (
+          <Button
+            value="Оновити Результат"
+            className="reset-result-btn"
+            onClick={props.onClickResetState}
+          ></Button>
+        )}
+        {props.state.isVisible && (
+          <EmojiResultBlock state={props.state}></EmojiResultBlock>
+        )}
       </div>
     </>
   );

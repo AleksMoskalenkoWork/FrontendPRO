@@ -6,15 +6,18 @@ export default class Voting extends React.Component {
   constructor(props) {
     super(props);
 
-    this.voting = JSON.parse(localStorage.getItem('voting'));
-
-    this.state = this.voting || {
+    this.state = JSON.parse(localStorage.getItem('voting')) || {
       angry: 0,
       smile: 0,
       upside: 0,
       sunglasses: 0,
       laughing: 0,
       isVisible: false,
+      result: {
+        key: null,
+        value: null,
+        className: null,
+      },
     };
   }
 
@@ -24,11 +27,10 @@ export default class Voting extends React.Component {
     }
   }
 
-  toggleBlock = () => {
-    this.setState((prevState) => ({
-      isVisible: !prevState.isVisible,
-    }));
-  };
+  resetState() {
+    localStorage.removeItem('voting');
+    location.reload();
+  }
 
   vote(emojiKey) {
     this.setState((prevState) => {
@@ -40,39 +42,55 @@ export default class Voting extends React.Component {
   }
 
   result() {
-    console.log('i am show result');
+    const [winnerKey, winnerValue] = Object.entries(this.state).reduce(
+      (previousValue, currentValue) =>
+        currentValue[1] > previousValue[1] ? currentValue : previousValue
+    );
 
-    // const maxValue = Math.max(...Object.values(this.state));
-    // console.log(maxValue);
-
-    // const [winnerKey, winnerValue] = Object.entries(this.state).reduce(
-    //   (previousValue, currentValue) =>
-    //     currentValue[1] > previousValue[1] ? currentValue : previousValue
-    // );
-
-    // console.log('Winner:', winnerKey);
-    // console.log('Votes:', winnerValue);
-  }
-
-  resetState() {
-    localStorage.removeItem('voting');
-    location.reload();
+    if (winnerKey === 'angry') {
+      const className = 'bi bi-emoji-angry-fill icon-winner';
+      this.setState((prevState) => ({
+        isVisible: !prevState.isVisible,
+        result: { key: winnerKey, votes: winnerValue, className: className },
+      }));
+      location.reload();
+    } else if (winnerKey === 'smile') {
+      const className = 'bi bi-emoji-smile-fill icon-winner';
+      this.setState((prevState) => ({
+        isVisible: !prevState.isVisible,
+        result: { key: winnerKey, votes: winnerValue, className: className },
+      }));
+    } else if (winnerKey === 'upside') {
+      const className = 'bi bi-emoji-smile-upside-down-fill icon-winner';
+      this.setState((prevState) => ({
+        isVisible: !prevState.isVisible,
+        result: { key: winnerKey, votes: winnerValue, className: className },
+      }));
+    } else if (winnerKey === 'sunglasses') {
+      const className = 'bi bi-emoji-sunglasses-fill icon-winner';
+      this.setState((prevState) => ({
+        isVisible: !prevState.isVisible,
+        result: { key: winnerKey, votes: winnerValue, className: className },
+      }));
+    } else if (winnerKey === 'laughing') {
+      const className = 'bi bi-emoji-laughing-fill icon-winner';
+      this.setState((prevState) => ({
+        isVisible: !prevState.isVisible,
+        result: { key: winnerKey, votes: winnerValue, className: className },
+      }));
+    }
   }
 
   render() {
     console.log('QA', this.state);
-    const { isVisible } = this.state;
 
     return (
-      <>
-        <Modal
-          onClickEmoji={this.vote.bind(this)}
-          onClickShowResult={this.toggleBlock.bind(this)}
-          onClickResetState={this.resetState}
-          state={this.state}
-        ></Modal>
-        {isVisible && <EmojiResultBlock></EmojiResultBlock>}
-      </>
+      <Modal
+        onClickEmoji={this.vote.bind(this)}
+        onClickShowResult={this.result.bind(this)}
+        onClickResetState={this.resetState}
+        state={this.state}
+      ></Modal>
     );
   }
 }
