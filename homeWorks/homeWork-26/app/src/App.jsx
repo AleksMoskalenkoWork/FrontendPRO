@@ -1,9 +1,14 @@
-import { useState } from 'react';
 import './App.css';
 import Modal from './components/Modal';
 
 function App() {
-  return <Modal></Modal>;
+  return (
+    <>
+      <div className="content-wrapper">
+        <Modal></Modal>
+      </div>
+    </>
+  );
 }
 
 export default App;

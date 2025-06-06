@@ -1,32 +1,32 @@
 import EmojiContainer from './emoji/EmojiContainer';
 import EmojiResultBlock from './emoji/EmojiResultBlock';
 import Button from './base/Button';
+import useVoteState from './hooks/useVoteState';
 
-export default function Modal(props) {
+export default function Modal() {
+  const { currentState, vote, resetState, result } = useVoteState();
+
   return (
     <>
       <div className="modal-container">
         <h3>Голосування за найкращий смайлик</h3>
-        <EmojiContainer
-          onClick={props.onClickEmoji}
-          state={props.state}
-        ></EmojiContainer>
-        {!props.state.isVisible && (
+        <EmojiContainer onClick={vote} state={currentState}></EmojiContainer>
+        {!currentState.isVisible && (
           <Button
             value="Показати результат"
             className="show-result-btn"
-            onClick={props.onClickShowResult}
+            onClick={result}
           ></Button>
         )}
-        {props.state.isVisible && (
+        {currentState.isVisible && (
           <Button
             value="Очистити результати"
             className="reset-result-btn"
-            onClick={props.onClickResetState}
+            onClick={resetState}
           ></Button>
         )}
-        {props.state.isVisible && (
-          <EmojiResultBlock state={props.state}></EmojiResultBlock>
+        {currentState.isVisible && (
+          <EmojiResultBlock state={currentState}></EmojiResultBlock>
         )}
       </div>
     </>
