@@ -1,0 +1,22 @@
+.error_page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.error_page-button {
+  width: fit-content;
+  height: 48px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #7a8288;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.error_page-button:hover {
+  background-color: #000;
+}
