@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer } from 'react';
 
 const initialTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
 let nextId = initialTasks.length
   ? +initialTasks[initialTasks.length - 1].id + 1
   : 1;
@@ -41,6 +42,7 @@ function tasksReducer(tasks, action) {
         ])
       );
     }
+
     case 'changed': {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -50,9 +52,15 @@ function tasksReducer(tasks, action) {
         }
       });
     }
+
     case 'deleted': {
-      return tasks.filter((t) => t.id !== action.id);
+      const index = tasks.findIndex((task) => task.id === action.id);
+      if (index !== -1) {
+        tasks.splice(index, 1);
+      }
+      return localStorage.setItem('tasks', JSON.stringify(tasks));
     }
+
     default: {
       throw Error('Unknown action: ' + action.type);
     }

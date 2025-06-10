@@ -1,4 +1,7 @@
 @import './components/header.css';
 @import './pages/404.css';
 @import './pages/home_page.css';
-@import './components/todo.css';
+@import './components/form.css';
+@import './components/form.css';
+@import './components/task.css';
+@import './components/list.css';

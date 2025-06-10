@@ -1,10 +1,12 @@
-import Todo from '../components/Todo';
+import Form from '../components/todo/Form';
+import List from '../components/todo/List';
 
 function HomePage() {
   return (
     <>
       <div className="home_page-wrapper">
-        <Todo />
+        <Form />
+        <List />
       </div>
     </>
   );

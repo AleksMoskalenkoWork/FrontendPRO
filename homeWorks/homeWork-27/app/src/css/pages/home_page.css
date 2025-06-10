@@ -1,4 +1,7 @@
 .home_page-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
 }
