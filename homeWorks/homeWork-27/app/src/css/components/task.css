@@ -8,12 +8,14 @@
   margin-bottom: 10px;
 }
 
-.task-checkbox {
+.task-checked {
+  text-decoration: line-through;
 }
 
 .task-description {
   flex-grow: 1;
   padding-left: 10px;
+  color: black;
 }
 
 .task-delete {

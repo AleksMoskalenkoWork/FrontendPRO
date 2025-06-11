@@ -44,21 +44,22 @@ function tasksReducer(tasks, action) {
     }
 
     case 'changed': {
-      return tasks.map((t) => {
-        if (t.id === action.task.id) {
-          return action.task;
-        } else {
-          return t;
-        }
-      });
+      const updatedTasks = tasks.map((task) =>
+        task.id === action.task.id ? action.task : task
+      );
+
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
     }
 
     case 'deleted': {
       const index = tasks.findIndex((task) => task.id === action.id);
-      if (index !== -1) {
-        tasks.splice(index, 1);
-      }
-      return localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      const updatedTasks = [...tasks];
+      updatedTasks.splice(index, 1);
+
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
     }
 
     default: {

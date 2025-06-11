@@ -3,6 +3,16 @@ import Task from './Task';
 
 function List() {
   const tasks = useTasks();
+  if (!tasks) {
+    return null;
+  }
+
+  if (tasks.length === 0) {
+    return (
+      <span className="empty-state">List is empty. Add your first task.</span>
+    );
+  }
+
   return (
     <>
       <ul className="list">

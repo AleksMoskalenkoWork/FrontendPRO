@@ -1,15 +1,35 @@
-import { useState } from 'react';
 import { useTasksDispatch } from '../../context/TodoContext';
 import Input from '../core/Input';
 import Button from '../core/Button';
+import { useState } from 'react';
+import Modal from '../core/Modal';
 
 function Task(props) {
-  const [isEditing, setIsEditing] = useState(false);
+  const [openTask, setOpenTask] = useState(null);
   const dispatch = useTasksDispatch();
   return (
     <>
-      <Input type="checkbox" className="task-checkbox" />
-      <span className="task-description">{props.task.text}</span>
+      <Input
+        type="checkbox"
+        checked={props.task.done}
+        className="task-checkbox"
+        onChange={(e) => {
+          dispatch({
+            type: 'changed',
+            task: {
+              ...props.task,
+              done: e.target.checked,
+            },
+          });
+        }}
+      />
+      <span
+        className={
+          props.task.done ? 'task-description task-checked' : 'task-description'
+        }
+      >
+        {props.task.text}
+      </span>
       <Button
         className="task-delete"
         value="Видалити"
