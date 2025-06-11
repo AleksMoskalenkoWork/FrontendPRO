@@ -10,7 +10,7 @@ function Header() {
         </div>
 
         <ul className="nav justify-content-end nav-link-wrapper">
-          <ThemeToggle />
+          <ThemeToggle className="toggler-theme" />
           <li className="link-wrapper">
             <Link className="nav-link link" to="/">
               Головна

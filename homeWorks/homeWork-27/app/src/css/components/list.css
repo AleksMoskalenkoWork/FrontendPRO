@@ -2,17 +2,24 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--bg-color);
   width: 100%;
 }
 
 .list-item {
   display: flex;
-  padding: 10px;
-  background: #fff;
-  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
   margin-bottom: 10px;
+}
+
+.list-empty_state {
+  background-color: var(--bg-color);
+  width: inherit;
+  text-align: center;
 }

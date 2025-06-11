@@ -4,6 +4,7 @@
   flex-direction: column;
   width: inherit;
   padding-top: 16px;
+  background-color: var(--bg-color);
 }
 
 .form-title {
@@ -11,8 +12,6 @@
 }
 
 .form {
-  background: #fff;
-  padding: 10px;
   margin-top: 25px;
   margin-bottom: 25px;
   display: flex;
@@ -23,10 +22,10 @@
   min-height: 25px;
   padding: 10px;
   width: 100%;
-  border: 1px solid;
+  border: 1px solid var(--border-color);
 }
 .form-button {
-  background: #0be69d;
+  background-color: var(--primary-color);
   border: none;
   cursor: pointer;
   width: 100px;

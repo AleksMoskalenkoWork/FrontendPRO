@@ -1,10 +1,10 @@
 import { useTheme } from '../../context/ThemeContext';
 
-function ThemeToggle() {
+function ThemeToggle(props) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button className="btn" onClick={toggleTheme}>
+    <button className={props.className} onClick={toggleTheme}>
       {theme === 'light' ? '🌙 Темна тема' : '☀️ Світла тема'}
     </button>
   );

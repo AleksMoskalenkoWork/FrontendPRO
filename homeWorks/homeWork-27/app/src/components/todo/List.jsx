@@ -13,7 +13,9 @@ function List() {
 
   if (tasks.length === 0) {
     return (
-      <span className="empty-state">List is empty. Add your first task.</span>
+      <div className="list-empty_state">
+        <span>List is empty. Add your first task.</span>
+      </div>
     );
   }
 
@@ -31,12 +33,7 @@ function List() {
     <>
       <ul className="list">
         {tasks.map((task) => (
-          <li
-            className="list-item"
-            key={task.id}
-            onClick={handleClick(task)}
-            style={{ cursor: 'pointer' }}
-          >
+          <li className="list-item" key={task.id} onClick={handleClick(task)}>
             <Task task={task} />
           </li>
         ))}

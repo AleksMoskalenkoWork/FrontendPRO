@@ -1,10 +1,10 @@
 .task-wrapper {
   display: flex;
-  padding: 10px;
-  background: #fff;
-  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
@@ -15,11 +15,11 @@
 .task-description {
   flex-grow: 1;
   padding-left: 10px;
-  color: black;
+  color: var(--text-color);
 }
 
 .task-delete {
-  background: #0be69d;
+  background-color: var(--primary-color);
   border: none;
   cursor: pointer;
   width: 95px;

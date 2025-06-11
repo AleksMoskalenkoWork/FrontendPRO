@@ -4,19 +4,23 @@
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.error_page-title {
+  margin-bottom: 32px;
 }
 
 .error_page-button {
-  width: fit-content;
-  height: 48px;
   cursor: pointer;
   padding: 8px;
-  background-color: #7a8288;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--link-color);
   text-decoration: none;
   border-radius: 8px;
+  border: 1px solid;
 }
-
 .error_page-button:hover {
-  background-color: #000;
+  background-color: var(--link-hover-color);
+  color: var(--bg-color);
 }
