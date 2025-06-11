@@ -3,23 +3,25 @@
   top: 60px;
   width: 300px;
   padding: 0 12px;
-  background-color: #272b30;
+  background-color: var(--bg-color);
   border-radius: 12px;
-  border: 1px solid gray;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: both;
+  border: 1px solid var(--border-color);
 }
 
 .modal-header {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--border-color);
   padding: 8px 0;
 }
 
 .modal-footer {
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--border-color);
   padding: 8px 0;
 }
 
 .modal-body {
   padding: 8px 0;
+}
+
+.modal-button {
+  background-color: var(--primary-color);
 }

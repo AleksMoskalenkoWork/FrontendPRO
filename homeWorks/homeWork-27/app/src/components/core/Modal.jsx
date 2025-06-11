@@ -8,7 +8,7 @@ function Modal(props) {
           <h5 className="modal-title">Task №{props.task.id}</h5>
           <button
             type="button"
-            className="btn-close btn-close-white"
+            className="btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
             onClick={props.onClick}
@@ -20,7 +20,7 @@ function Modal(props) {
         <div className="modal-footer">
           <button
             type="button"
-            className="btn btn-secondary"
+            className="modal-button"
             data-bs-dismiss="modal"
             onClick={props.onClick}
           >
