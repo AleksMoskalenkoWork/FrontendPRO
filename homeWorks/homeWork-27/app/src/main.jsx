@@ -9,6 +9,7 @@ import ErrorPage from './pages/404.jsx';
 import ContactsPage from './pages/ContactsPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import { TasksProvider } from './context/TodoContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +26,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <TasksProvider>
-      <RouterProvider router={router} />
-    </TasksProvider>
+    <ThemeProvider>
+      <TasksProvider>
+        <RouterProvider router={router} />
+      </TasksProvider>
+    </ThemeProvider>
   </StrictMode>
 );

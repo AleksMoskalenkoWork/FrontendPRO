@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import ThemeToggle from './core/ThemeToggle';
 
 function Header() {
   return (
@@ -9,6 +10,7 @@ function Header() {
         </div>
 
         <ul className="nav justify-content-end nav-link-wrapper">
+          <ThemeToggle />
           <li className="link-wrapper">
             <Link className="nav-link link" to="/">
               Головна

@@ -1,0 +1,25 @@
+.modal-wrapper {
+  position: absolute;
+  top: 60px;
+  width: 300px;
+  padding: 0 12px;
+  background-color: #272b30;
+  border-radius: 12px;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: both;
+}
+
+.modal-header {
+  border-bottom: 1px solid gray;
+  padding: 8px 0;
+}
+
+.modal-footer {
+  border-top: 1px solid gray;
+  padding: 8px 0;
+}
+
+.modal-body {
+  padding: 8px 0;
+}
