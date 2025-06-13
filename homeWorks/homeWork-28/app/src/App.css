@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.form-input_wrapper {
+  width: inherit;
+}
+
 .form-input {
   min-height: 25px;
   padding: 10px;
@@ -84,4 +88,9 @@
   cursor: pointer;
   width: 95px;
   padding: 10px;
+}
+
+.error {
+  color: lightcoral;
+  position: absolute;
 }

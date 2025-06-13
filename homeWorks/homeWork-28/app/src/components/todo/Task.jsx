@@ -28,6 +28,7 @@ function Task(props) {
         {props.task.text}
       </span>
       <Button
+        type="submit"
         className="task-delete"
         value="Видалити"
         onClick={() => {
