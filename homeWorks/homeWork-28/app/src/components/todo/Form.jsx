@@ -43,7 +43,6 @@ function TodoForm() {
             name="taskName"
             type="text"
             onChange={todoForm.handleChange}
-            on
             value={todoForm.values.taskName}
             className="form-input"
           />

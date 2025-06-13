@@ -5,6 +5,7 @@ export default function Input(props) {
       type={props.type}
       onChange={props.onChange}
       checked={props.checked}
+      name={props.name}
     />
   );
 }
