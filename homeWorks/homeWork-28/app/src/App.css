@@ -1,0 +1,32 @@
+#root {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.page-container {
+  width: inherit;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form-input {
+  min-height: 25px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.form-button {
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
