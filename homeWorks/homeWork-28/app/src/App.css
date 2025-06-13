@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   width: inherit;
+  margin-bottom: 24px;
 }
 
 .form-title {
@@ -29,4 +30,58 @@
   border: none;
   cursor: pointer;
   width: 100px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.list-empty_state {
+  background-color: var(--bg-color);
+  width: inherit;
+  text-align: center;
+}
+
+.task-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.task-checked {
+  text-decoration: line-through;
+}
+
+.task-description {
+  flex-grow: 1;
+  padding-left: 10px;
+  color: var(--text-color);
+}
+
+.task-delete {
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  width: 95px;
+  padding: 10px;
 }
