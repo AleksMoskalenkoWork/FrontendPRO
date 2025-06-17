@@ -1,0 +1,99 @@
+#root {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.page-container {
+  width: inherit;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  margin-bottom: 24px;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form-input_wrapper {
+  width: inherit;
+}
+
+.form-input {
+  min-height: 25px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.form-button {
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+}
+
+.list-item {
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.list-item_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-empty_state {
+  background-color: var(--bg-color);
+  width: inherit;
+  text-align: center;
+}
+
+.task-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.task-checked {
+  text-decoration: line-through;
+}
+
+.task-description {
+  flex-grow: 1;
+  padding-left: 10px;
+  color: var(--text-color);
+}
+
+.task-delete {
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  width: 95px;
+  padding: 10px;
+}
+
+.error {
+  color: lightcoral;
+  position: absolute;
+}
