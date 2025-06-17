@@ -4,3 +4,31 @@
   padding: 2rem;
   text-align: center;
 }
+
+.wrapper {
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.count-wrapper,
+.button-wrapper {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrement,
+.increment {
+  width: 50%;
+  height: 50px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 64px;
+}

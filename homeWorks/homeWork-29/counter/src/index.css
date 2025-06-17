@@ -1,14 +1,46 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --bg-color: #fdf6f0;
+  --text-color: #3e2f2c;
+  --primary-color: #d87d4a;
+  --primary-hover: #c86d3a;
+  --secondary-color: #a67c52;
+  --secondary-hover: #946b45;
+  --border-color: #e4d3c2;
+  --card-bg: #fffaf5;
+
+  --link-color: #a05525;
+  --link-hover-color: #7e3d1d;
+  --link-active-color: #d87d4a;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: var(--bg-color);
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.4;
+  font-size: 14px;
   font-weight: 400;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+[data-bs-theme='dark'] {
+  --bg-color: #1e1a17;
+  --text-color: #f8e9dd;
+  --primary-color: #ff9b5f;
+  --primary-hover: #ff8440;
+  --secondary-color: #cc9f6a;
+  --secondary-hover: #b78a55;
+  --border-color: #3a2f2b;
+  --card-bg: #2a2320;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --link-color: #ffbc91;
+  --link-hover-color: #ff9966;
+  --link-active-color: #ff9b5f;
 }

@@ -1,14 +1,25 @@
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from './features/counterSlice';
 
 function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
   return (
     <>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
-        expedita dignissimos, sint molestias maxime unde tempore nihil debitis
-        deleniti, natus laborum dolores eum quis temporibus ratione quibusdam
-        cum aut id.
-      </p>
+      <div className="wrapper">
+        <div className="count-wrapper">
+          <span className="result">{count}</span>
+        </div>
+        <div className="button-wrapper">
+          <button className="decrement" onClick={() => dispatch(decrement())}>
+            -
+          </button>
+          <button className="increment" onClick={() => dispatch(increment())}>
+            +
+          </button>
+        </div>
+      </div>
     </>
   );
 }
