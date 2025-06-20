@@ -1,5 +1,13 @@
 function Button(props) {
-  return <button className={props.className}>{props.value}</button>;
+  return (
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
+      {props.value}
+    </button>
+  );
 }
 
 export default Button;
