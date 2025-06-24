@@ -1,0 +1,33 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: inherit;
+  padding-top: 16px;
+  background-color: var(--bg-color);
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-input {
+  min-height: 25px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.form-button {
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}

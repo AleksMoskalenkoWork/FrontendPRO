@@ -1,0 +1,6 @@
+@import './css/index.css';
+
+#root {
+  width: 1000px;
+  margin: 0 auto;
+}
