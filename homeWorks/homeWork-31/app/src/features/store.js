@@ -10,7 +10,7 @@ const store = configureStore({
     todo: todoReducer,
   },
   middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware({ thunk: false }),
+    ...getDefaultMiddleware(),
     sagaMiddleware,
   ],
 });

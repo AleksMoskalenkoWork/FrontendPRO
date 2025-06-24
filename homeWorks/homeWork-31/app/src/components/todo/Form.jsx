@@ -8,8 +8,9 @@ function Form() {
   const dispatch = useDispatch();
 
   function handleClick() {
-    setText('');
+    if (!text.trim()) return;
     dispatch({ type: 'todo/addTodoSaga', payload: text });
+    setText('');
   }
 
   return (

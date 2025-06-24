@@ -5,10 +5,17 @@ const todoSlice = createSlice({
   initialState: { todos: [], status: 'idle', error: null },
 
   reducers: {
-    add: (state, action) => {
-      console.log('todoSlice add', action);
-
-      state.todos.push(action.payload);
+    // addTodo: (state, action) => {
+    //   state.todos.push(action.payload);
+    // },
+    todoDelete: (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    todoCompleted: (state, action) => {
+      const todo = state.todos.find((todo) => todo.id === action.payload);
+      if (todo) {
+        todo.completed = !todo.completed;
+      }
     },
     todoRequest: (state) => {
       state.status = 'loading';
@@ -25,7 +32,12 @@ const todoSlice = createSlice({
   },
 });
 
-export const { add, todoRequest, todoSuccess, todoRejected } =
-  todoSlice.actions;
+export const {
+  todoCompleted,
+  todoDelete,
+  todoRequest,
+  todoSuccess,
+  todoRejected,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;

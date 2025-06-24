@@ -1,30 +1,29 @@
 import Input from '../core/Input';
 import Button from '../core/Button';
-import { useState } from 'react';
-import Modal from '../core/Modal';
+import { useDispatch } from 'react-redux';
 
 function Task(props) {
-  const [openTask, setOpenTask] = useState(null);
-  const dispatch = useTasksDispatch();
+  const dispatch = useDispatch();
+  console.log(props.task.completed);
+
   return (
     <>
       <Input
         type="checkbox"
-        checked={props.task.done}
+        checked={props.task.completed}
         className="task-checkbox"
-        onChange={(e) => {
+        onChange={() => {
           dispatch({
-            type: 'changed',
-            task: {
-              ...props.task,
-              done: e.target.checked,
-            },
+            type: 'todo/completedTodoSaga',
+            payload: props.task.id,
           });
         }}
       />
       <span
         className={
-          props.task.done ? 'task-description task-checked' : 'task-description'
+          props.task.completed
+            ? 'task-description task-checked'
+            : 'task-description'
         }
       >
         {props.task.text}
@@ -34,8 +33,8 @@ function Task(props) {
         value="Видалити"
         onClick={() => {
           dispatch({
-            type: 'deleted',
-            id: props.task.id,
+            type: 'todo/deleteTodoSaga',
+            payload: props.task.id,
           });
         }}
       />

@@ -3,6 +3,7 @@ export default function Input(props) {
     <input
       className={props.className}
       type={props.type}
+      value={props.value}
       onChange={props.onChange}
       checked={props.checked}
     />
