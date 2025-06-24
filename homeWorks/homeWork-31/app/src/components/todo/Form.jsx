@@ -8,8 +8,8 @@ function Form() {
   const dispatch = useDispatch();
 
   function handleClick() {
-    dispatch({ type: 'todo/addTodoSaga', payload: text });
     setText('');
+    dispatch({ type: 'todo/addTodoSaga', payload: text });
   }
 
   return (
