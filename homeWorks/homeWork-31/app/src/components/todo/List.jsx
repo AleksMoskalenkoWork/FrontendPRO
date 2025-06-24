@@ -1,21 +1,36 @@
 import Modal from '../core/Modal';
 import Task from './Task';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { todoRequest } from '../../features/todoSlice';
 
 function List() {
   const [openTask, setOpenTask] = useState(null);
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.todos);
+  const { todos, status, error } = useSelector((state) => state.todo);
+
+  useEffect(() => {
+    if (todos.length) {
+      return (
+        <div className="list-empty_state">
+          <span>List is empty. Add your first task.</span>
+        </div>
+      );
+    }
+  }, [status, error, todos]);
 
   if (!tasks) {
     return null;
   }
 
-  if (tasks.length === 0) {
-    return (
-      <div className="list-empty_state">
-        <span>List is empty. Add your first task.</span>
-      </div>
-    );
-  }
+  //   if (tasks.length === 0) {
+  //     return (
+  //       <div className="list-empty_state">
+  //         <span>List is empty. Add your first task.</span>
+  //       </div>
+  //     );
+  //   }
 
   const handleClick = (task) => (e) => {
     if (
