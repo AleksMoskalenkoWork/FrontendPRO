@@ -1,5 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import {
+  todoRequest,
   todoSuccess,
   todoRejected,
   todoDelete,
@@ -12,6 +13,7 @@ let id = 1;
 
 function* addTodoSaga(action) {
   try {
+    yield put(todoRequest());
     const todo = {
       id: id++,
       text: action.payload,
