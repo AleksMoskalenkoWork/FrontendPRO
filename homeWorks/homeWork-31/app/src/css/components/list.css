@@ -25,3 +25,12 @@
   width: inherit;
   text-align: center;
 }
+
+.list-clear {
+  width: fit-content;
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+}

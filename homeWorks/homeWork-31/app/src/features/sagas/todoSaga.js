@@ -1,10 +1,11 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import {
-  todoRequest,
   todoSuccess,
   todoRejected,
   todoDelete,
   todoCompleted,
+  todoEdit,
+  todoClear,
 } from '../todoSlice';
 
 let id = 1;
@@ -38,8 +39,26 @@ function* completedTodoSaga(action) {
   }
 }
 
+function* editTodoSaga(action) {
+  try {
+    yield put(todoEdit(action.payload));
+  } catch (error) {
+    yield put(todoRejected(error.message));
+  }
+}
+
+function* clearTodoSaga() {
+  try {
+    yield put(todoClear());
+  } catch (error) {
+    yield put(todoRejected(error.message));
+  }
+}
+
 export function* watchTodoSaga() {
   yield takeEvery('todo/addTodoSaga', addTodoSaga);
   yield takeEvery('todo/deleteTodoSaga', deleteTodoSaga);
   yield takeEvery('todo/completedTodoSaga', completedTodoSaga);
+  yield takeEvery('todo/editTodoSaga', editTodoSaga);
+  yield takeEvery('todo/clearTodoSaga', clearTodoSaga);
 }

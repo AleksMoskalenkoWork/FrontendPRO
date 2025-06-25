@@ -1,10 +1,12 @@
+import Button from '../core/Button';
 import Modal from '../core/Modal';
 import Task from './Task';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function List() {
   const [openTask, setOpenTask] = useState(null);
+  const dispatch = useDispatch();
   const tasks = useSelector((state) => state.todo.todos);
 
   if (!tasks) {
@@ -22,6 +24,7 @@ function List() {
   const handleClick = (task) => (e) => {
     if (
       (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') ||
+      (e.target.tagName === 'INPUT' && e.target.type === 'text') ||
       e.target.tagName === 'BUTTON'
     ) {
       return;
@@ -37,6 +40,17 @@ function List() {
             <Task task={task} />
           </li>
         ))}
+        {tasks.length && (
+          <Button
+            className="list-clear"
+            value="Очистити список задач"
+            onClick={() => {
+              dispatch({
+                type: 'todo/clearTodoSaga',
+              });
+            }}
+          />
+        )}
       </ul>
       {openTask && <Modal task={openTask} onClick={() => setOpenTask(null)} />}
     </>
