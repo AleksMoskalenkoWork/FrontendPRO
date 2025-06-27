@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router';
@@ -11,12 +11,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Provider } from 'react-redux';
 import store from './features/store.js';
-
-const theme = createTheme({
-  colorSchemes: {
-    dark: true,
-  },
-});
+import theme from './theme/theme.js';
 
 const router = createBrowserRouter([
   {

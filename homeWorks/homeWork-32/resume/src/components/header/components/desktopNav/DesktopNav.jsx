@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import Box from '@mui/material/Box';
-import ThemeToggler from '../../../core/themeToggler/themeToggler';
+import ThemeToggler from '../../../core/themeToggler/ThemeToggler';
 
 export default function DesktopNav() {
   return (
