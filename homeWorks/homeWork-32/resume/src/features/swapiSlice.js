@@ -6,7 +6,7 @@ const swapiSlice = createSlice({
 
   reducers: {
     swapiClear: (state) => {
-      state.swapi = [];
+      state.swapis = [];
       state.error = null;
     },
     swapiRequest: (state) => {
