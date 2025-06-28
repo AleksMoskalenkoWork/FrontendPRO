@@ -27,7 +27,16 @@ function Form() {
 
         <Box sx={{ display: 'flex', width: '100%' }}>
           <TextField
-            sx={{ width: '100%' }}
+            variant="outlined"
+            sx={{
+              width: '100%',
+              '& .MuiOutlinedInput-root': {
+                padding: 0, // убирает отступы контейнера, если нужно
+              },
+              '& .MuiOutlinedInput-input': {
+                padding: '8px 12px', // задаёт нужные отступы для текстового поля
+              },
+            }}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />

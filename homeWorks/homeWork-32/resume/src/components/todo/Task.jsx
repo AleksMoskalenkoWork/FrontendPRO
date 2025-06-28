@@ -30,7 +30,9 @@ function Task(props) {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          height: '80px',
+          paddingBottom: '8px',
+          paddingTop: '8px',
+          //   height: '80px',
           border: `1px solid ${
             theme.palette.mode === 'light' ? 'black' : 'white'
           }`,
@@ -49,6 +51,16 @@ function Task(props) {
         <Box sx={{ width: '75%' }}>
           {edit ? (
             <TextField
+              variant="outlined"
+              sx={{
+                width: '100%',
+                '& .MuiOutlinedInput-root': {
+                  padding: 0, // убирает отступы контейнера, если нужно
+                },
+                '& .MuiOutlinedInput-input': {
+                  padding: '8px 12px', // задаёт нужные отступы для текстового поля
+                },
+              }}
               type="text"
               value={editText}
               onChange={(e) => setEditText(e.target.value)}

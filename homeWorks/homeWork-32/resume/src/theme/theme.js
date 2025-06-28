@@ -123,6 +123,15 @@ const theme = createTheme({
             },
           },
         },
+        MuiList: {
+          styleOverrides: {
+            root: {
+              listStyle: 'none',
+              margin: 0,
+              padding: 0,
+            },
+          },
+        },
         MuiButton: {
           styleOverrides: {
             root: {
