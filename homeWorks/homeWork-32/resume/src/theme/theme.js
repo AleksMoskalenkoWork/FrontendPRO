@@ -1,4 +1,3 @@
-// theme.js
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -6,17 +5,17 @@ const theme = createTheme({
     light: {
       palette: {
         mode: 'light',
-        primary: { main: '#0a192f', contrastText: '#fff' },
-        secondary: { main: '#007acc', contrastText: '#fff' },
-        background: { default: '#f4f6f8', paper: '#fff' },
-        text: { primary: '#1a1a1a', secondary: '#5c5c5c' },
+        primary: { main: '#1b2a41', contrastText: '#ffffff' }, // Navy
+        secondary: { main: '#4b5d67', contrastText: '#ffffff' }, // Slate gray
+        background: { default: '#f5f7fa', paper: '#ffffff' }, // light gray bg
+        text: { primary: '#1e1e1e', secondary: '#5c5c5c' },
       },
       typography: {
         fontFamily: `'Roboto', 'Helvetica Neue', 'Arial', sans-serif`,
         h1: {
           fontSize: '2.5rem',
           fontWeight: 700,
-          color: '#0a192f',
+          color: '#1b2a41',
         },
         h2: {
           fontSize: '2rem',
@@ -32,12 +31,12 @@ const theme = createTheme({
           styleOverrides: {
             root: {
               textDecoration: 'none',
-              color: '#0a192f', // primary.main
+              color: '#FFF',
               fontWeight: 500,
               transition: 'color 0.2s ease',
               '&:hover': {
                 textDecoration: 'underline',
-                color: '#007acc', // secondary.main
+                color: '#2196f3',
               },
             },
           },
@@ -64,12 +63,12 @@ const theme = createTheme({
               borderRadius: 8,
               textTransform: 'none',
               fontWeight: 500,
-              border: '1px solid #0a192f',
-              backgroundColor: '#0a192f',
+              border: '1px solid #1b2a41',
+              backgroundColor: '#1b2a41',
               color: '#ffffff',
               '&:hover': {
-                backgroundColor: '#132c54',
-                borderColor: '#132c54',
+                backgroundColor: '#26364d',
+                borderColor: '#26364d',
               },
             },
           },
@@ -88,10 +87,10 @@ const theme = createTheme({
     dark: {
       palette: {
         mode: 'dark',
-        primary: { main: '#007acc', contrastText: '#fff' },
-        secondary: { main: '#0a192f', contrastText: '#fff' },
-        background: { default: '#0d1117', paper: '#161b22' },
-        text: { primary: '#ffffff', secondary: '#c9d1d9' },
+        primary: { main: '#4b5d67', contrastText: '#ffffff' },
+        secondary: { main: '#1b2a41', contrastText: '#ffffff' },
+        background: { default: '#121212', paper: '#1e1e1e' },
+        text: { primary: '#ffffff', secondary: '#a0a0a0' },
       },
       typography: {
         fontFamily: `'Roboto', 'Helvetica Neue', 'Arial', sans-serif`,
@@ -114,12 +113,12 @@ const theme = createTheme({
           styleOverrides: {
             root: {
               textDecoration: 'none',
-              color: '#ffffff', // or primary.contrastText
+              color: '#FFF',
               fontWeight: 500,
               transition: 'color 0.2s ease',
               '&:hover': {
                 textDecoration: 'underline',
-                color: '#3399ff', // brighter accent for hover
+                color: '#2196f3',
               },
             },
           },
@@ -130,12 +129,12 @@ const theme = createTheme({
               borderRadius: 8,
               textTransform: 'none',
               fontWeight: 500,
-              border: '1px solid #007acc',
-              backgroundColor: '#007acc',
+              border: '1px solid #4b5d67',
+              backgroundColor: '#4b5d67',
               color: '#ffffff',
               '&:hover': {
-                backgroundColor: '#3399ff',
-                borderColor: '#3399ff',
+                backgroundColor: '#6e8490',
+                borderColor: '#6e8490',
               },
             },
           },
