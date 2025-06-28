@@ -32,7 +32,6 @@ function Task(props) {
           width: '100%',
           paddingBottom: '8px',
           paddingTop: '8px',
-          //   height: '80px',
           border: `1px solid ${
             theme.palette.mode === 'light' ? 'black' : 'white'
           }`,
@@ -55,10 +54,10 @@ function Task(props) {
               sx={{
                 width: '100%',
                 '& .MuiOutlinedInput-root': {
-                  padding: 0, // убирает отступы контейнера, если нужно
+                  padding: 0,
                 },
                 '& .MuiOutlinedInput-input': {
-                  padding: '8px 12px', // задаёт нужные отступы для текстового поля
+                  padding: '8px 12px',
                 },
               }}
               type="text"
@@ -85,7 +84,7 @@ function Task(props) {
               }
             }}
           >
-            {edit ? 'Зберегти' : 'Редагувати'}
+            {edit ? 'Save' : 'Edit'}
           </Button>
           <Button
             sx={{ marginRight: '8px' }}
@@ -96,7 +95,7 @@ function Task(props) {
               });
             }}
           >
-            Видалити
+            Delete
           </Button>
         </Box>
       </Box>

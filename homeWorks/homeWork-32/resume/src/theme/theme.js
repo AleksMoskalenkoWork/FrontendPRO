@@ -5,9 +5,9 @@ const theme = createTheme({
     light: {
       palette: {
         mode: 'light',
-        primary: { main: '#1b2a41', contrastText: '#ffffff' }, // Navy
-        secondary: { main: '#4b5d67', contrastText: '#ffffff' }, // Slate gray
-        background: { default: '#f5f7fa', paper: '#ffffff' }, // light gray bg
+        primary: { main: '#1b2a41', contrastText: '#ffffff' },
+        secondary: { main: '#4b5d67', contrastText: '#ffffff' },
+        background: { default: '#f5f7fa', paper: '#ffffff' },
         text: { primary: '#1e1e1e', secondary: '#5c5c5c' },
       },
       typography: {

@@ -31,17 +31,17 @@ function Form() {
             sx={{
               width: '100%',
               '& .MuiOutlinedInput-root': {
-                padding: 0, // убирает отступы контейнера, если нужно
+                padding: 0,
               },
               '& .MuiOutlinedInput-input': {
-                padding: '8px 12px', // задаёт нужные отступы для текстового поля
+                padding: '8px 12px',
               },
             }}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
           <Button sx={{ marginLeft: '8px' }} onClick={handleClick}>
-            Додати
+            Add
           </Button>
         </Box>
       </Box>

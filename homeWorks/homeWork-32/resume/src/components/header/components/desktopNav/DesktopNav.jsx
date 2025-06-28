@@ -13,7 +13,7 @@ export default function DesktopNav() {
         }}
       >
         <ThemeToggler />
-        <Link href="/">Головна</Link>
+        <Link href="/">Home</Link>
         <Link href="todo">Todo</Link>
         <Link href="swapi">Swapi</Link>
       </Box>

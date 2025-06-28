@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
+import Textarea from '@mui/joy/Textarea';
 import Box from '@mui/material/Box';
 
 export default function Contentgroup() {
@@ -33,12 +33,13 @@ export default function Contentgroup() {
           }}
         >
           <p className="content-group_header">Result:</p>
-          <TextareaAutosize
+          <Textarea
             placeholder="Result must show here..."
             minRows={10}
+            maxRows={10}
             value={value}
             readOnly
-          ></TextareaAutosize>
+          ></Textarea>
           <Box sx={{ padding: '8px' }}>
             <Button
               onClick={() => {

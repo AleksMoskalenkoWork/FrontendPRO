@@ -67,7 +67,7 @@ function ListCmp() {
                 });
               }}
             >
-              Очистити список задач
+              Clear task list
             </Button>
           )}
         </List>

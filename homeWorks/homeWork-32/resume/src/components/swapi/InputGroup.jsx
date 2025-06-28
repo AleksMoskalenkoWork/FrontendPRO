@@ -28,6 +28,15 @@ export default function Inputgroup() {
             value={params}
             onChange={(e) => setParams(e.target.value)}
             placeholder="...try people/1/, or select from below."
+            variant="outlined"
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                padding: 0,
+              },
+              '& .MuiOutlinedInput-input': {
+                padding: '8px 12px',
+              },
+            }}
           ></TextField>
           <Box sx={{ padding: '8px' }}>
             <Button

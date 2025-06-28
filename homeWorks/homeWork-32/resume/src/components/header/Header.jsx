@@ -7,7 +7,7 @@ import DesktopNav from './components/desktopNav/DesktopNav';
 
 function Header() {
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -52,4 +52,5 @@ function Header() {
     </AppBar>
   );
 }
+
 export default Header;
