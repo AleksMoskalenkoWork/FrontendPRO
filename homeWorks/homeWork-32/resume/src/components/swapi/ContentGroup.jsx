@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
+import Box from '@mui/material/Box';
 
 export default function Contentgroup() {
   const [value, setValue] = useState('');
@@ -23,24 +24,34 @@ export default function Contentgroup() {
 
   return (
     <>
-      <div className="content-group_wrapper">
-        <p className="content-group_header">Result:</p>
-        <TextareaAutosize
-          placeholder="Result must show here..."
-          //   rows="10"
-          className="content-group_field"
-          value={value}
-          readOnly
-        ></TextareaAutosize>
-        <Button
-          className="input-group_button"
-          onClick={() => {
-            dispatch({ type: 'swapi/clearSwapiSaga' });
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '500px',
           }}
         >
-          cleare
-        </Button>
-      </div>
+          <p className="content-group_header">Result:</p>
+          <TextareaAutosize
+            placeholder="Result must show here..."
+            minRows={10}
+            value={value}
+            readOnly
+          ></TextareaAutosize>
+          <Box sx={{ padding: '8px' }}>
+            <Button
+              onClick={() => {
+                dispatch({ type: 'swapi/clearSwapiSaga' });
+              }}
+            >
+              cleare
+            </Button>
+          </Box>
+          {/* <Box></Box>
+        <Box></Box> */}
+        </Box>
+      </Box>
     </>
   );
 }

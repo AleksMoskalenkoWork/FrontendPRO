@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
@@ -15,20 +16,26 @@ function Form() {
 
   return (
     <>
-      <div className="form-wrapper">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <h1 className="form-title">ToDoList</h1>
 
-        <div className="form">
+        <Box sx={{ display: 'flex', width: '100%' }}>
           <TextField
-            className="form-input"
+            sx={{ width: '100%' }}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <Button className="form-button" onClick={handleClick}>
+          <Button sx={{ marginLeft: '8px' }} onClick={handleClick}>
             Додати
           </Button>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </>
   );
 }

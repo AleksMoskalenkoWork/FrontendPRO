@@ -1,10 +1,13 @@
-import Task from './Task';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Task from './Task';
 import Button from '@mui/material/Button';
 import ModalCmp from '../core/modal/Modal';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
-function List() {
+function ListCmp() {
   const [openTask, setOpenTask] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -17,9 +20,9 @@ function List() {
 
   if (tasks.length === 0) {
     return (
-      <div className="list-empty_state">
+      <Box sx={{ textAlign: 'center', marginTop: '8px' }}>
         <span>List is empty. Add your first task.</span>
-      </div>
+      </Box>
     );
   }
 
@@ -34,37 +37,46 @@ function List() {
     ) {
       return;
     }
-    console.log('click');
     handleOpen();
     setOpenTask(task);
   };
 
   return (
     <>
-      <ul className="list">
-        {tasks.map((task) => (
-          <li className="list-item" key={task.id} onClick={handleClick(task)}>
-            <Task task={task} />
-          </li>
-        ))}
-        {tasks.length && (
-          <Button
-            className="list-clear"
-            onClick={() => {
-              dispatch({
-                type: 'todo/clearTodoSaga',
-              });
-            }}
-          >
-            Очистити список задач
-          </Button>
+      <Box>
+        <List>
+          {tasks.map((task) => (
+            <ListItem
+              sx={{
+                width: '100%',
+                paddingLeft: 0,
+                paddingRight: 0,
+                cursor: 'pointer',
+              }}
+              key={task.id}
+              onClick={handleClick(task)}
+            >
+              <Task task={task} />
+            </ListItem>
+          ))}
+          {tasks.length && (
+            <Button
+              onClick={() => {
+                dispatch({
+                  type: 'todo/clearTodoSaga',
+                });
+              }}
+            >
+              Очистити список задач
+            </Button>
+          )}
+        </List>
+        {openTask && (
+          <ModalCmp open={open} task={openTask} onClose={() => handleClose()} />
         )}
-      </ul>
-      {openTask && (
-        <ModalCmp open={open} task={openTask} onClose={() => handleClose()} />
-      )}
+      </Box>
     </>
   );
 }
 
-export default List;
+export default ListCmp;
