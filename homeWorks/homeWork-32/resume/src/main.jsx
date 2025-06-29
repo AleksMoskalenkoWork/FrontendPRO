@@ -1,15 +1,15 @@
-import { StrictMode, useMemo, useState } from 'react';
-import { createRoot } from 'react-dom/client';
 import './index.css';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import { ThemeProvider } from '@mui/material/styles';
 import Root from './pages/Root.jsx';
 import ErrorPage from './pages/404.jsx';
 import TodoPage from './pages/TodoPage.jsx';
 import SwapiPage from './pages/SwapiPage.jsx';
 import HomePage from './pages/HomePage.jsx';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Provider } from 'react-redux';
 import store from './features/store.js';
 import theme from './theme/theme.js';
 

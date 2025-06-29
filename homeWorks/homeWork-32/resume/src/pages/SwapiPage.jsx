@@ -1,14 +1,14 @@
 import Contentgroup from '../components/swapi/ContentGroup';
 import Inputgroup from '../components/swapi/InputGroup';
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 function SwapiPage() {
   return (
     <>
-      <Box sx={{ height: '100vh' }}>
+      <Container sx={{ padding: '8px' }}>
         <Inputgroup />
         <Contentgroup />
-      </Box>
+      </Container>
     </>
   );
 }

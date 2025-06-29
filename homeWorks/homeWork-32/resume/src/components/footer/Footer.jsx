@@ -14,12 +14,13 @@ function Footer() {
         bottom: 0,
         left: 0,
         width: '100%',
+        height: '120px',
         background:
           theme.palette.mode === 'light'
             ? theme.palette.primary.main
             : 'linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #1e1e1e',
-        p: 3,
-        mt: 4,
+        p: 1,
+        mt: 2,
         textAlign: 'center',
         color: 'white',
       }}

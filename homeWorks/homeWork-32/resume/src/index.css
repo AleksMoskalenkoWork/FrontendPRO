@@ -15,8 +15,9 @@ body {
 
   margin: 0;
   height: 100vh;
+  box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
+h3 {
+  margin: 0;
 }

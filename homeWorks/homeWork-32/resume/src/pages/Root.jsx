@@ -6,11 +6,20 @@ import { Box } from '@mui/material';
 function Root() {
   return (
     <>
-      <Box sx={{ paddingTop: '64px' }}>
-        <Header />
+      <Header />
+      <Box
+        sx={{
+          position: 'fixed',
+          top: '64px',
+          bottom: '120px',
+          left: 0,
+          right: 0,
+          overflowY: 'auto',
+        }}
+      >
         <Outlet />
-        <Footer />
       </Box>
+      <Footer />
     </>
   );
 }

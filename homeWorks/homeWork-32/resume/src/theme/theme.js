@@ -21,6 +21,9 @@ const theme = createTheme({
           fontSize: '2rem',
           fontWeight: 600,
         },
+        h3: {
+          margin: 0,
+        },
         body1: {
           fontSize: '1rem',
           lineHeight: 1.6,
