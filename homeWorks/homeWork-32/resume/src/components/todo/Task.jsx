@@ -19,7 +19,7 @@ function Task(props) {
       type: 'todo/editTodoSaga',
       payload: { id: props.task.id, text: editText },
     });
-    setText('');
+    setEdit('');
   }
 
   return (
@@ -29,7 +29,7 @@ function Task(props) {
           display: 'flex',
           flexDirection: { xs: 'row', sm: 'row' },
           alignItems: { xs: 'center', sm: 'center' },
-          justifyContent: 'space-between',
+          //   justifyContent: 'space-between',
           width: '100%',
           paddingBottom: '8px',
           paddingTop: '8px',
@@ -85,6 +85,7 @@ function Task(props) {
         <Box
           sx={{
             display: 'flex',
+            marginLeft: 'auto',
           }}
         >
           <Button
