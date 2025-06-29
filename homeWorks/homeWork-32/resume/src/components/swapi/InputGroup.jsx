@@ -20,7 +20,7 @@ export default function Inputgroup() {
       >
         <h1>Try it now!</h1>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Box sx={{ padding: '8px' }}>
+          <Box sx={{ display: { xs: 'none', sm: 'block' }, padding: '8px' }}>
             <span>https://www.swapi.tech/api/</span>
           </Box>
           <TextField

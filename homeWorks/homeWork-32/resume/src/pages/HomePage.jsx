@@ -18,7 +18,19 @@ export default function HomePage() {
       <Typography variant="h5" sx={{ marginBottom: '24px' }}>
         Tech Stack
       </Typography>
-      <Stack direction="row" spacing={1} flexWrap="wrap" mb={3}>
+
+      <Stack
+        direction="row"
+        spacing={1}
+        flexWrap="wrap"
+        mb={3}
+        useFlexGap
+        sx={{
+          rowGap: 1,
+          columnGap: 1,
+          justifyContent: { xs: 'center', sm: 'flex-start' },
+        }}
+      >
         <Chip label="React/Next.js" color="primary" />
         <Chip label="JavaScript (ES6+)" color="primary" />
         <Chip label="HTML5" color="secondary" />

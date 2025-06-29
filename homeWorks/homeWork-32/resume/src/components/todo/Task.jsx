@@ -27,7 +27,8 @@ function Task(props) {
       <Box
         sx={{
           display: 'flex',
-          alignItems: 'center',
+          flexDirection: { xs: 'row', sm: 'row' },
+          alignItems: { xs: 'center', sm: 'center' },
           justifyContent: 'space-between',
           width: '100%',
           paddingBottom: '8px',
@@ -35,6 +36,7 @@ function Task(props) {
           border: `1px solid ${
             theme.palette.mode === 'light' ? 'black' : 'white'
           }`,
+          gap: 1,
         }}
       >
         <Checkbox
@@ -46,8 +48,9 @@ function Task(props) {
               payload: props.task.id,
             });
           }}
+          sx={{ alignSelf: { xs: 'flex-start', sm: 'center' } }}
         />
-        <Box sx={{ width: '75%' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', width: '50%' }}>
           {edit ? (
             <TextField
               variant="outlined"
@@ -68,13 +71,22 @@ function Task(props) {
             <span
               style={{
                 textDecoration: props.task.completed ? 'line-through' : 'none',
+                display: 'inline-block',
+                maxWidth: '50%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
               }}
             >
               {props.task.text}
             </span>
           )}
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
           <Button
             sx={{ marginRight: '8px' }}
             onClick={() => {
