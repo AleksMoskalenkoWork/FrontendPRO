@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
-import ThemeToggler from '../../../core/themeToggler/ThemeToggler';
 import { Drawer, List, ListItem, useTheme } from '@mui/material';
 
 export default function MobileNav() {
@@ -47,7 +46,7 @@ export default function MobileNav() {
             <List>
               <ListItem>
                 <Link onClick={handleCloseNavMenu} href="/">
-                  Головна
+                  Home
                 </Link>
               </ListItem>
               <ListItem>
