@@ -118,26 +118,28 @@ export default function HomePage() {
         Work experience
       </Typography>
 
-      <Typography>
+      <Box>
+        <h3>ManualQA Engineer</h3>
         <span>
-          <h3>ManualQA Engineer</h3> <strong>June,2022-October,2024</strong>
+          <strong>June,2022-October,2024</strong>
         </span>
         <br />
         Managed the entire testing process in the company through acceptance
         testing. Responsible for the development and writing of E2E test
         scripts. Was engaged in task management and creation of bug reports.
-      </Typography>
+      </Box>
 
       <Divider sx={{ my: 2 }} />
 
-      <Typography>
+      <Box>
+        <h3>Frontend Developer</h3>
         <span>
-          <h3>Frontend Developer</h3> <strong>September,2020-April,2022</strong>
+          <strong>September,2020-April,2022</strong>
         </span>
         <br />
         Developed frontend components for an agricultural platform using React
         and Angular, collaborating with a cross-functional team.
-      </Typography>
+      </Box>
 
       <Divider sx={{ my: 2 }} />
 

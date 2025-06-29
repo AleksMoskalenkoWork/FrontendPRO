@@ -9,13 +9,17 @@ export default function DesktopNav() {
         sx={{
           display: { xs: 'none', md: 'flex' },
           alignItems: 'center',
+          justifyContent: 'center',
           gap: 2,
+          width: '75%',
         }}
       >
-        <ThemeToggler />
         <Link href="/">Home</Link>
         <Link href="todo">Todo</Link>
         <Link href="swapi">Swapi</Link>
+      </Box>
+      <Box sx={{ marginLeft: 'auto' }}>
+        <ThemeToggler />
       </Box>
     </>
   );
