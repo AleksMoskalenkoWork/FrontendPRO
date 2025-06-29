@@ -49,8 +49,6 @@ export default function Contentgroup() {
               cleare
             </Button>
           </Box>
-          {/* <Box></Box>
-        <Box></Box> */}
         </Box>
       </Box>
     </>
