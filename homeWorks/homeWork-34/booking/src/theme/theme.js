@@ -81,6 +81,10 @@ const theme = createTheme({
               '&:hover': {
                 textDecoration: 'underline',
               },
+              '&.active': {
+                textDecoration: 'underline',
+                fontWeight: 700,
+              },
             },
           },
         },
@@ -179,6 +183,10 @@ const theme = createTheme({
               color: '#FF8C00',
               '&:hover': {
                 textDecoration: 'underline',
+              },
+              '&.active': {
+                textDecoration: 'underline',
+                fontWeight: 700,
               },
             },
           },
