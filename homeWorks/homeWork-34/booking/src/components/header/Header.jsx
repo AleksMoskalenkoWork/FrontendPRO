@@ -4,11 +4,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import MobileNav from './components/MobileNav';
 import DesktopNav from './components/DesktopNav';
+import { useTheme } from '@mui/material/styles';
 
 function Header() {
+  const theme = useTheme();
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -25,11 +27,18 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            Resume
+            <img
+              src="../../../public/logo.svg"
+              alt="BookingLogo"
+              style={{
+                height: 40,
+                color: theme.palette.primary.main,
+              }}
+            />
           </Typography>
           <MobileNav />
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
@@ -44,7 +53,14 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            Resume
+            <img
+              src="../../../public/logo_small.svg"
+              alt="BookingLogo"
+              style={{
+                height: 40,
+                color: theme.palette.primary.main,
+              }}
+            />
           </Typography>
           <DesktopNav />
         </Toolbar>

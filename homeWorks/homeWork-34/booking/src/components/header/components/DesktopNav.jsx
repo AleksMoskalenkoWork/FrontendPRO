@@ -15,8 +15,8 @@ export default function DesktopNav() {
         }}
       >
         <Link href="/">Home</Link>
-        <Link href="todo">Todo</Link>
-        <Link href="swapi">Swapi</Link>
+        <Link href="hotels">Hotels</Link>
+        <Link href="about">About</Link>
       </Box>
       <Box sx={{ marginLeft: 'auto' }}>
         <ThemeToggler />

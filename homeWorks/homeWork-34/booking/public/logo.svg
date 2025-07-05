@@ -1,0 +1,28 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bounce {
+      animation: bounce 1.5s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+  </style>
+
+  <circle class="bounce" cx="20" cy="20" r="14" fill="#FF8C00" />
+
+  <text x="44" y="26"
+        font-family="'Roboto', 'Helvetica Neue', 'Arial', sans-serif"
+        font-size="20"
+        font-weight="700"
+        fill="#000000">
+    <tspan>Book</tspan>
+    <tspan fill="#FF8C00">ing</tspan>
+  </text>
+</svg>

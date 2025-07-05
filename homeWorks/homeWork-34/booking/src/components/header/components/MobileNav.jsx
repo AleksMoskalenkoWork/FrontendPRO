@@ -18,7 +18,13 @@ export default function MobileNav() {
   };
   return (
     <>
-      <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          height: '64px',
+          display: { xs: 'flex', md: 'none' },
+        }}
+      >
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -36,11 +42,11 @@ export default function MobileNav() {
               height: '100%',
               width: '50%',
               position: 'fixed',
-              top: '56px',
-              background:
+              top: '64px',
+              backgroundColor:
                 theme.palette.mode === 'light'
-                  ? theme.palette.primary.main
-                  : 'linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #1e1e1e',
+                  ? theme.palette.background.default
+                  : theme.palette.background.paper,
             }}
           >
             <List>
@@ -50,13 +56,13 @@ export default function MobileNav() {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link onClick={handleCloseNavMenu} href="todo">
-                  Todo
+                <Link onClick={handleCloseNavMenu} href="hotels">
+                  Hotels
                 </Link>
               </ListItem>
               <ListItem>
-                <Link onClick={handleCloseNavMenu} href="swapi">
-                  Swapi
+                <Link onClick={handleCloseNavMenu} href="about">
+                  About
                 </Link>
               </ListItem>
             </List>
