@@ -50,6 +50,9 @@ const theme = createTheme({
               '&:hover': {
                 backgroundColor: '#e67e00',
               },
+              '&.active': {
+                backgroundColor: '#cc6f00',
+              },
             },
           },
         },
@@ -78,13 +81,6 @@ const theme = createTheme({
               textDecoration: 'none',
               fontWeight: 600,
               color: '#FF8C00',
-              '&:hover': {
-                textDecoration: 'underline',
-              },
-              '&.active': {
-                textDecoration: 'underline',
-                fontWeight: 700,
-              },
             },
           },
         },
@@ -147,6 +143,9 @@ const theme = createTheme({
               '&:hover': {
                 backgroundColor: '#e67e00',
               },
+              '&.active': {
+                backgroundColor: '#ffb84d',
+              },
             },
           },
         },
@@ -181,13 +180,6 @@ const theme = createTheme({
               textDecoration: 'none',
               fontWeight: 600,
               color: '#FF8C00',
-              '&:hover': {
-                textDecoration: 'underline',
-              },
-              '&.active': {
-                textDecoration: 'underline',
-                fontWeight: 700,
-              },
             },
           },
         },

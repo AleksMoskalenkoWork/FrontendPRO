@@ -1,23 +1,38 @@
 import { Outlet } from 'react-router';
 import Header from '../components/header/Header';
-import { Box } from '@mui/material';
+import { Box, Container, useTheme } from '@mui/material';
 
 function Root() {
+  const theme = useTheme();
   return (
     <>
       <Header />
       <Box
         sx={{
-          position: 'fixed',
-          top: '64px',
-          bottom: '120px',
-          left: 0,
-          right: 0,
-          overflowY: 'auto',
+          with: '100vw',
+          height: '100vh',
+          backgroundColor:
+            theme.palette.mode === 'light'
+              ? theme.palette.background.default
+              : theme.palette.background.paper,
         }}
       >
-        <Outlet />
-      </Box>{' '}
+        <Container
+          sx={{
+            position: 'fixed',
+            top: '64px',
+            left: 0,
+            right: 0,
+            overflowY: 'auto',
+            backgroundColor:
+              theme.palette.mode === 'light'
+                ? theme.palette.background.default
+                : theme.palette.background.paper,
+          }}
+        >
+          <Outlet />
+        </Container>
+      </Box>
     </>
   );
 }
