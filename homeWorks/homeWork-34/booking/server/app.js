@@ -14,8 +14,8 @@ app.use(express.json());
 app.get('/parsJson', async (req, res) => {
   try {
     const db = await dbConnection();
-    const dataPath = path.resolve(__dirname, '');
-    const data = fs.readFileSync(dataPath, 'utf-8');
+    const path = path.resolve(__dirname, '');
+    const data = fs.readFileSync(path, 'utf-8');
     const json = JSON.parse(data).destination;
 
     const result = await db.collection('destination').insertMany(json);
