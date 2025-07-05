@@ -14,7 +14,7 @@ app.use(express.json());
 app.get('/parsJson', async (req, res) => {
   try {
     const db = await dbConnection();
-    const dataPath = path.resolve(__dirname, 'db.json');
+    const dataPath = path.resolve(__dirname, '');
     const data = fs.readFileSync(dataPath, 'utf-8');
     const json = JSON.parse(data).destination;
 
