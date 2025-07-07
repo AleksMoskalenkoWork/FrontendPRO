@@ -1,15 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import todoReducer from './todoSlice';
-import swapiReducer from './swapiSlice';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
+import bookingReducer from './bookingSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    todo: todoReducer,
-    swapi: swapiReducer,
+    booking: bookingReducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),

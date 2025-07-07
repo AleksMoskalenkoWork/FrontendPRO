@@ -27,6 +27,6 @@ function* fetchDestinationSaga(action) {
 //   }
 // }
 
-export function* watchSwapiSaga() {
+export function* watchBookingSaga() {
   yield takeLatest('booking/fetchDestinationSaga', fetchDestinationSaga);
 }
