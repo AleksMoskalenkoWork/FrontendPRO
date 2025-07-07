@@ -75,6 +75,24 @@ const theme = createTheme({
             },
           },
         },
+        MuiList: {
+          styleOverrides: {
+            root: {
+              width: '246px',
+              height: '250px',
+            },
+          },
+        },
+        MuiPaper: {
+          styleOverrides: {
+            root: {
+              scrollbarWidth: 'none',
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+            },
+          },
+        },
         MuiLink: {
           styleOverrides: {
             root: {
@@ -170,6 +188,24 @@ const theme = createTheme({
               },
               '& label': {
                 color: '#bbbbbb',
+              },
+            },
+          },
+        },
+        MuiList: {
+          styleOverrides: {
+            root: {
+              width: '246px',
+              height: '250px',
+            },
+          },
+        },
+        MuiPaper: {
+          styleOverrides: {
+            root: {
+              scrollbarWidth: 'none',
+              '&::-webkit-scrollbar': {
+                display: 'none',
               },
             },
           },

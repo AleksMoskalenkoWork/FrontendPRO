@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const bookingSlice = createSlice({
   name: 'booking',
-  initialState: { booking: [], status: 'idle', error: null },
+  initialState: { hotels: [], destination: [], status: 'idle', error: null },
 
   reducers: {
     // bookingClear: (state) => {
@@ -16,16 +16,27 @@ const bookingSlice = createSlice({
     bookingSuccess: (state, action) => {
       state.status = 'success';
       //   state.swapis = [];
-      //   state.swapis.push(action.payload.result);
+      state.booking.push(action.payload);
     },
     bookingRejected: (state, action) => {
       state.status = 'failed';
       state.error = action.payload;
     },
+    setHotels: (state, action) => {
+      state.hotels = action.payload;
+    },
+    setDestination: (state, action) => {
+      state.destination = action.payload;
+    },
   },
 });
 
-export const { bookingRequest, bookingSuccess, bookingRejected } =
-  bookingSlice.actions;
+export const {
+  bookingRequest,
+  bookingSuccess,
+  bookingRejected,
+  setDestination,
+  setHotels,
+} = bookingSlice.actions;
 
 export default bookingSlice.reducer;
