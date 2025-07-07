@@ -35,14 +35,6 @@ function* fetchHotelsSaga(action) {
   }
 }
 
-// function* clearSwapiSaga() {
-//   try {
-//     yield put(swapiClear());
-//   } catch (error) {
-//     yield put(swapiRejected(error.message));
-//   }
-// }
-
 export function* watchBookingSaga() {
   yield takeLatest('booking/fetchDestinationSaga', fetchDestinationSaga);
   yield takeLatest('booking/fetchHotelsSaga', fetchHotelsSaga);

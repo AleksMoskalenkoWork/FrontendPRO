@@ -20,7 +20,6 @@ export default function PopularHotels() {
     }
   }, [dispatch, hotels.length]);
 
-  console.log(hotels.filter((x) => x.hotel_rating === 4));
   const popularHotels = hotels.filter((x) => x.hotel_rating === 4);
 
   return (
