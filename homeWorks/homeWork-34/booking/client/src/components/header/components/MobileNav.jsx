@@ -55,11 +55,11 @@ export default function MobileNav() {
                   Home
                 </Link>
               </ListItem>
-              <ListItem>
+              {/* <ListItem>
                 <Link onClick={handleCloseNavMenu} href="hotels">
                   Hotels
                 </Link>
-              </ListItem>
+              </ListItem> */}
               <ListItem>
                 <Link onClick={handleCloseNavMenu} href="about">
                   About

@@ -56,7 +56,12 @@ export default function PopularHotels() {
                   justifyContent: 'space-between',
                 }}
               >
-                <CardMedia component="img" height="100" image="" alt="Hotel" />
+                <CardMedia
+                  component="img"
+                  height="100"
+                  image=""
+                  alt="HotelImg"
+                />
                 <CardContent sx={{ width: '100%' }}>
                   <Typography gutterBottom variant="p" component="div">
                     {x.city},{x.country_code}
