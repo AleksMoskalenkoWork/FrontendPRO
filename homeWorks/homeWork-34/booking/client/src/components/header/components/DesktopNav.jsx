@@ -33,14 +33,14 @@ export default function DesktopNav() {
           >
             Home
           </Button>
-          {/* <Button
+          <Button
             component={NavLink}
             to="hotels"
             underline="none"
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             Hotels
-          </Button> */}
+          </Button>
           <Button
             component={NavLink}
             to="about"
