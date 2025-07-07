@@ -27,6 +27,28 @@ app.get('/parsJson', async (req, res) => {
   }
 });
 
+app.get('/destination', async (req, res) => {
+  try {
+    const db = await dbConnection();
+    const data = await db.collection('destination').find({}).toArray();
+    res.json(data);
+  } catch (err) {
+    console.error('Fetch error:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/hotels', async (req, res) => {
+  try {
+    const db = await dbConnection();
+    const data = await db.collection('hotels').find({}).toArray();
+    res.json(data);
+  } catch (err) {
+    console.error('Fetch error:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.listen(process.env.PORT, () => {
   console.log(
     `Server listen port: ${process.env.PORT}, and run on http://localhost:${process.env.PORT}`
