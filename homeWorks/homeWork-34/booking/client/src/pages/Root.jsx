@@ -19,10 +19,7 @@ function Root() {
       >
         <Container
           sx={{
-            position: 'fixed',
-            top: '64px',
-            left: 0,
-            right: 0,
+            paddingTop: '64px',
             overflowY: 'auto',
             backgroundColor:
               theme.palette.mode === 'light'

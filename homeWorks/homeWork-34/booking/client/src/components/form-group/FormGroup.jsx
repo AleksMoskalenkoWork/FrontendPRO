@@ -17,9 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function FormGroupCmp() {
   const dispatch = useDispatch();
-  const { destination, hotels, status, error } = useSelector(
-    (state) => state.booking
-  );
+  const { destination, hotels } = useSelector((state) => state.booking);
 
   useEffect(() => {
     if (destination.length === 0) {
@@ -38,13 +36,7 @@ export default function FormGroupCmp() {
     },
     onSubmit: (values) => {
       console.log('values', values);
-
-      //   dispatch({
-      //     type: 'added',
-      //     id: nextId++,
-      //     text: values.taskName,
-      //   });
-      //   location.reload();
+      bookingForm.resetForm();
     },
     validate: (values) => {
       const errors = {};
@@ -55,6 +47,7 @@ export default function FormGroupCmp() {
 
       return errors;
     },
+    enableReinitialize: true,
   });
 
   return (
@@ -67,6 +60,8 @@ export default function FormGroupCmp() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: 3,
             paddingTop: '8px',
             paddingBottom: '24px',
             marginTop: '12px',
@@ -77,6 +72,9 @@ export default function FormGroupCmp() {
               bookingForm.touched.destination &&
               Boolean(bookingForm.errors.destination)
             }
+            sx={{
+              width: { xs: '100%', sm: '246px' },
+            }}
           >
             <InputLabel id="destinationId">Destination</InputLabel>
             <Select
@@ -87,7 +85,6 @@ export default function FormGroupCmp() {
               label="Destination"
               onChange={bookingForm.handleChange}
               onBlur={bookingForm.handleBlur}
-              sx={{ width: '246px', marginRight: '16px' }}
             >
               {destination &&
                 destination.map((x) => (
@@ -112,30 +109,31 @@ export default function FormGroupCmp() {
               )}
           </FormControl>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <FormControl>
+            <FormControl sx={{ width: { xs: '100%', sm: 'auto' } }}>
               <DatePicker
                 label="From"
                 value={bookingForm.values.dateFrom}
                 onChange={(dateFrom) => {
                   bookingForm.setFieldValue('dateFrom', dateFrom);
                 }}
-                sx={{ marginRight: '16px' }}
               />
             </FormControl>
-            <FormControl>
+            <FormControl sx={{ width: { xs: '100%', sm: 'auto' } }}>
               <DatePicker
                 label="To"
                 value={bookingForm.values.dateTo}
                 onChange={(dateTo) => {
                   bookingForm.setFieldValue('dateTo', dateTo);
                 }}
-                sx={{ marginRight: '16px' }}
               />
             </FormControl>
           </LocalizationProvider>
 
-          <Button type="submit" sx={{ height: '56px' }}>
-            {status === 'loading' ? 'Search Hotels' : 'Searching...'}
+          <Button
+            type="submit"
+            sx={{ height: '56px', width: { xs: '100%', sm: 'auto' } }}
+          >
+            Search
           </Button>
         </Box>
       </FormGroup>

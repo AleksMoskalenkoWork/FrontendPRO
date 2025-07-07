@@ -78,7 +78,7 @@ const theme = createTheme({
         MuiList: {
           styleOverrides: {
             root: {
-              width: '246px',
+              width: { xs: '100%', sm: '246px' },
               height: '250px',
             },
           },
@@ -195,7 +195,7 @@ const theme = createTheme({
         MuiList: {
           styleOverrides: {
             root: {
-              width: '246px',
+              width: { xs: '100%', sm: '246px' },
               height: '250px',
             },
           },

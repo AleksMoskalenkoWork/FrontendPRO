@@ -5,10 +5,6 @@ const bookingSlice = createSlice({
   initialState: { hotels: [], destination: [], status: 'idle', error: null },
 
   reducers: {
-    // bookingClear: (state) => {
-    //   state.swapis = [];
-    //   state.error = null;
-    // },
     bookingRequest: (state) => {
       state.status = 'loading';
       state.error = null;
