@@ -52,6 +52,7 @@ export default function MobileNav() {
           <Box
             sx={{
               width: '250px',
+              height: '100vh',
               paddingTop: '64px',
               backgroundColor:
                 theme.palette.mode === 'light'
