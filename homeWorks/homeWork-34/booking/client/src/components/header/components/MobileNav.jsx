@@ -2,20 +2,27 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Link from '@mui/material/Link';
-import { Drawer, List, ListItem, useTheme } from '@mui/material';
+import { Link } from 'react-router';
+import {
+  SwipeableDrawer,
+  List,
+  ListItem,
+  Typography,
+  useTheme,
+} from '@mui/material';
 
 export default function MobileNav() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const iOS =
+    typeof navigator !== 'undefined' &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  const toggleDrawer = (state) => () => {
+    setOpen(state);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
   return (
     <>
       <Box
@@ -27,47 +34,68 @@ export default function MobileNav() {
       >
         <IconButton
           size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleOpenNavMenu}
+          aria-label="menu"
+          onClick={toggleDrawer(true)}
           color="inherit"
         >
           <MenuIcon />
         </IconButton>
-        <Drawer open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}>
+
+        <SwipeableDrawer
+          open={open}
+          onClose={toggleDrawer(false)}
+          onOpen={toggleDrawer(true)}
+          disableBackdropTransition={!iOS}
+          disableDiscovery={iOS}
+          anchor="left"
+        >
           <Box
             sx={{
-              display: { xs: 'block', md: 'none' },
-              height: '100%',
-              width: '50%',
-              position: 'fixed',
-              top: '64px',
+              width: '250px',
+              paddingTop: '64px',
               backgroundColor:
                 theme.palette.mode === 'light'
                   ? theme.palette.background.default
                   : theme.palette.background.paper,
             }}
+            role="presentation"
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}
           >
             <List>
               <ListItem>
-                <Link onClick={handleCloseNavMenu} href="/">
+                <Typography
+                  component={Link}
+                  to="/"
+                  underline="none"
+                  color="textPrimary"
+                >
                   Home
-                </Link>
+                </Typography>
               </ListItem>
               <ListItem>
-                <Link onClick={handleCloseNavMenu} href="hotels">
+                <Typography
+                  component={Link}
+                  to="hotels"
+                  underline="none"
+                  color="textPrimary"
+                >
                   Hotels
-                </Link>
+                </Typography>
               </ListItem>
               <ListItem>
-                <Link onClick={handleCloseNavMenu} href="about">
+                <Typography
+                  component={Link}
+                  to="about"
+                  underline="none"
+                  color="textPrimary"
+                >
                   About
-                </Link>
+                </Typography>
               </ListItem>
             </List>
           </Box>
-        </Drawer>
+        </SwipeableDrawer>
       </Box>
     </>
   );
