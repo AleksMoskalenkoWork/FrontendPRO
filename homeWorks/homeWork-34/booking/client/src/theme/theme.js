@@ -78,8 +78,9 @@ const theme = createTheme({
         MuiList: {
           styleOverrides: {
             root: {
-              width: { xs: '100%', sm: '246px' },
-              height: '250px',
+              width: { xs: '100%', sm: '150px' },
+              maxHeight: '350px',
+              minHeight: 'auto',
             },
           },
         },
@@ -196,8 +197,9 @@ const theme = createTheme({
         MuiList: {
           styleOverrides: {
             root: {
-              width: { xs: '100%', sm: '246px' },
-              height: '250px',
+              width: { xs: '100%', sm: '150px' },
+              maxHeight: '350px',
+              minHeight: 'auto',
             },
           },
         },

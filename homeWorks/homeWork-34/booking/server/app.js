@@ -49,6 +49,19 @@ app.get('/hotels', async (req, res) => {
   }
 });
 
+app.post('/search', async (req, res) => {
+  try {
+    const db = await dbConnection();
+    const data = await db.collection('hotels').find().toArray();
+    const search = data.filter((x) => x.city === req.body.destination);
+
+    res.json(search);
+  } catch (err) {
+    console.error('Fetch error:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.listen(process.env.PORT, () => {
   console.log(
     `Server listen port: ${process.env.PORT}, and run on http://localhost:${process.env.PORT}`

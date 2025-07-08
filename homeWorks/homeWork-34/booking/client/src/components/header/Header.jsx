@@ -44,7 +44,7 @@ function Header() {
               }}
             >
               <img
-                src="../../../public/logo_small.svg"
+                src="/logo_small.svg"
                 alt="BookingLogo"
                 style={{
                   height: 40,

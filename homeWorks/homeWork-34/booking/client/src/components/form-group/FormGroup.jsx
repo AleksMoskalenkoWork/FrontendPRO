@@ -33,9 +33,13 @@ export default function FormGroupCmp() {
       destination: '',
       dateFrom: null,
       dateTo: null,
+      adult: '',
+      children: '',
     },
     onSubmit: (values) => {
       console.log('values', values);
+
+      dispatch({ type: 'booking/fetchSearchSaga', payload: values });
       bookingForm.resetForm();
     },
     validate: (values) => {
@@ -72,9 +76,7 @@ export default function FormGroupCmp() {
               bookingForm.touched.destination &&
               Boolean(bookingForm.errors.destination)
             }
-            sx={{
-              width: { xs: '100%', sm: '246px' },
-            }}
+            sx={{ width: { xs: '100%', sm: '150px' } }}
           >
             <InputLabel id="destinationId">Destination</InputLabel>
             <Select
@@ -88,7 +90,11 @@ export default function FormGroupCmp() {
             >
               {destination &&
                 destination.map((x) => (
-                  <MenuItem key={x.id} value={x.label}>
+                  <MenuItem
+                    sx={{ width: { xs: '100%', sm: '150px' } }}
+                    key={x.id}
+                    value={x.label}
+                  >
                     {x.label}
                   </MenuItem>
                 ))}
@@ -109,7 +115,7 @@ export default function FormGroupCmp() {
               )}
           </FormControl>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <FormControl sx={{ width: { xs: '100%', sm: 'auto' } }}>
+            <FormControl sx={{ width: { xs: '100%', sm: '150px' } }}>
               <DatePicker
                 label="From"
                 value={bookingForm.values.dateFrom}
@@ -118,7 +124,7 @@ export default function FormGroupCmp() {
                 }}
               />
             </FormControl>
-            <FormControl sx={{ width: { xs: '100%', sm: 'auto' } }}>
+            <FormControl sx={{ width: { xs: '100%', sm: '150px' } }}>
               <DatePicker
                 label="To"
                 value={bookingForm.values.dateTo}
@@ -128,6 +134,38 @@ export default function FormGroupCmp() {
               />
             </FormControl>
           </LocalizationProvider>
+          <FormControl sx={{ width: { xs: '100%', sm: '150px' } }}>
+            <InputLabel id="adultID">Adult</InputLabel>
+            <Select
+              labelId="adultID"
+              id="adult"
+              value={bookingForm.values.adult}
+              label="adult"
+              onChange={(e) =>
+                bookingForm.setFieldValue('adult', e.target.value)
+              }
+              onBlur={bookingForm.handleBlur}
+            >
+              <MenuItem value={'true'}>Yes</MenuItem>
+              <MenuItem value={'false'}>No</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl sx={{ width: { xs: '100%', sm: '150px' } }}>
+            <InputLabel id="childrenID">Children</InputLabel>
+            <Select
+              labelId="childrenID"
+              id="children"
+              value={bookingForm.values.children}
+              label="children"
+              onChange={(e) =>
+                bookingForm.setFieldValue('children', e.target.value)
+              }
+              onBlur={bookingForm.handleBlur}
+            >
+              <MenuItem value={'true'}>Yes</MenuItem>
+              <MenuItem value={'false'}>No</MenuItem>
+            </Select>
+          </FormControl>
 
           <Button
             type="submit"

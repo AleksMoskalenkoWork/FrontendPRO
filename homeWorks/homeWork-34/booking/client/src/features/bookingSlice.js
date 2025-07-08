@@ -29,6 +29,9 @@ const bookingSlice = createSlice({
     setDestination: (state, action) => {
       state.destination = action.payload;
     },
+    setSearch: (state, action) => {
+      state.search = action.payload;
+    },
   },
 });
 
@@ -38,6 +41,7 @@ export const {
   bookingRejected,
   setDestination,
   setHotels,
+  setSearch,
 } = bookingSlice.actions;
 
 export default bookingSlice.reducer;

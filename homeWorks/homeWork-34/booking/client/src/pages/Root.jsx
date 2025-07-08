@@ -9,8 +9,7 @@ function Root() {
       <Header />
       <Box
         sx={{
-          with: '100vw',
-          height: '100vh',
+          minHeight: '100vh',
           backgroundColor:
             theme.palette.mode === 'light'
               ? theme.palette.background.default
@@ -20,7 +19,6 @@ function Root() {
         <Container
           sx={{
             paddingTop: '64px',
-            overflowY: 'auto',
             backgroundColor:
               theme.palette.mode === 'light'
                 ? theme.palette.background.default

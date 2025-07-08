@@ -37,7 +37,6 @@ export default function HotelsPage() {
           flexWrap: 'wrap',
           overflowX: 'auto',
           gap: 2,
-          paddingBottom: 1,
           width: '100%',
           paddingBottom: '24px',
           paddingTop: '12px',
