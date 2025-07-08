@@ -1,7 +1,6 @@
-import { takeEvery, put, call, takeLatest } from 'redux-saga/effects';
+import { put, call, takeLatest } from 'redux-saga/effects';
 import {
   bookingRequest,
-  bookingSuccess,
   bookingRejected,
   setDestination,
   setHotels,

@@ -7,8 +7,7 @@ import {
   Rating,
   Typography,
 } from '@mui/material';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function SearchResult() {
   const { search } = useSelector((state) => state.booking);

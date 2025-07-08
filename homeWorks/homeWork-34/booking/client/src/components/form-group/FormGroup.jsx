@@ -37,8 +37,6 @@ export default function FormGroupCmp() {
       children: '',
     },
     onSubmit: (values) => {
-      console.log('values', values);
-
       dispatch({ type: 'booking/fetchSearchSaga', payload: values });
       bookingForm.resetForm();
     },
