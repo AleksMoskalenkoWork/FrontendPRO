@@ -8,10 +8,13 @@ import {
   setSearch,
 } from '../bookingSlice';
 
-function* fetchDestinationSaga(action) {
+function* fetchDestinationSaga() {
   try {
     yield put(bookingRequest());
-    const response = yield call(fetch, 'http://localhost:3100/destination');
+    const response = yield call(
+      fetch,
+      `${import.meta.env.VITE_BASE_URL_API}/destination`
+    );
     if (!response.ok) {
       throw new Error('Failed to fetch data.');
     }
@@ -22,10 +25,13 @@ function* fetchDestinationSaga(action) {
   }
 }
 
-function* fetchHotelsSaga(action) {
+function* fetchHotelsSaga() {
   try {
     yield put(bookingRequest());
-    const response = yield call(fetch, 'http://localhost:3100/hotels');
+    const response = yield call(
+      fetch,
+      `${import.meta.env.VITE_BASE_URL_API}/hotels`
+    );
     if (!response.ok) {
       throw new Error('Failed to fetch data.');
     }
@@ -40,13 +46,17 @@ function* fetchSearchSaga(action) {
   try {
     yield put(bookingRequest());
 
-    const response = yield call(fetch, 'http://localhost:3100/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(action.payload),
-    });
+    const response = yield call(
+      fetch,
+      `${import.meta.env.VITE_BASE_URL_API}/search`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(action.payload),
+      }
+    );
 
     if (!response.ok) {
       throw new Error('Failed to fetch data.');
